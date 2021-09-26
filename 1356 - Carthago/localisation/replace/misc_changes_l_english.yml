@@ -1,0 +1,31 @@
+﻿l_english:
+#Trade Area:
+constantinople:0 "Bosphorus"
+genua:0 "Liguria"
+venice:0 "Venetum"
+crimea:0 "Chersonesus Taurica"
+tunis:0 "Carthaginensis"
+aleppo:0 "Oriens"
+sevilla:0 "Hispalis"
+valencia:0 "Valentia"
+#Great Projects(in Latin):
+great_project_kiel_canal:0 "Canalis Germanicobalticus"
+great_project_suez_canal:0 "Canalis Heroopoliticus"
+great_project_panama_canal:0 "Canalis Panamensis"
+kiel_canal:0 "Canalis Germanicobalticus"
+kiel_canal_title:0 "Construere Canalem Germanicobalticum"
+suez_canal:0 "Canalis Heroopoliticus"
+suez_canal_title:0 "Construere Canalem Heroopoliticum"
+panama_canal:0 "Canalis Panamensis"
+panama_canal_title:0 "Construere Canalem Panamensem"
+#culture:
+byzantine:0 "Hellenic"
+greek:0 "Rhomaian"
+latin:0 "Lombardo-Italian"
+#
+non_catholic_rome:0 "Fall of Vaticanus"
+#
+roman_empire_reform_byzantine_assimilated:0 "Legacy of Herakleios"
+roman_empire_reform_byzantine_assimilated_desc:0 "Despite the total Hellenization, the east half of the Empire had been existing alone for over 1000 years. All of their footprints, the glories they gained, the mistakes they made, will be valuable for us."
+#Events:
+institution_events.2.d:0 "Since the 14th century, the wealthy and powerful in [From.GetAreaName] have been patronizing artists and scholars willing to explore the old Roman and Greek societies of their forefathers. As a cultural movement the Renaissance already encompasses most of the region and has had a profound impact on literature, art, philosophy and music. Humanist scholars are also analyzing the society in which they live, comparing it to the ideals of the classical philosophers. At the turn of $YEAR$ Renaissance humanism has grown into a more mature movement, ready to permeate all aspects of society. A new ideal for rulers as well as those who are ruled is spreading as quickly as the early printers can distribute copies of these new ideas. A true Renaissance humanist is an expert on everything from politics and philosophy to art, textual analysis, music and architecture. The Renaissance is now ready to reshape the world to better fit the classical ideals."

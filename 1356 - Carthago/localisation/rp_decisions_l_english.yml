@@ -1,0 +1,13 @@
+﻿l_english:
+become_pontifex_maximus_latin_title:0 "Become Pontifex Maximus"
+become_pontifex_maximus_latin_desc:0 "The Pontifex Maximus was the highest position of the Roman Polytheistic Priesthood in ancient Rome. The immense authority of this position includes not only regulation of all religious affairs, but also superintendence of laws relating to daily life and public morals."
+restore_roman_pantheon_title:0 "Restore the Pantheon"
+restore_roman_pantheon_desc:0 "The Pantheon in Roma, built during the reign of Augustus, was once the most sacred temple to the Roman faith. It was, however, occupied by the Christians and turned into a cathedral since the 7th century. With all our holy lands recoverd, it is time to drive out the infidels and reclaim the Pantheon to be dedicated to true gods again."
+ban_semitic_monotheism_title:0 "Ban the Semitic Monotheism"
+ban_semitic_monotheism_desc:0 "The Semitic Monotheistic Religions, more precisely, the Judaism, Christianity, and Islam, have caused us a lot of troubles in history - the Jews had rebelled against our rule for countless times before they were expelled from Palaestina; the Christians had spread their xenophobic and conflicting beliefs in our land, and made the glorious Roman Empire corrupt from within; the Muslims took advantage of the chaos after the final Roman-Persian war and stolen most of the Roman territories from us... By the name of Diespiter, the reasons to ban those semitic monotheistic religions in Romania are unquestionable. But doing so would definitely cause some diplomatic issues..."
+legalize_semitic_monotheism_title:0 "Legalize the Semitic Monotheism"
+legalize_semitic_monotheism_desc:0 "The persecutions have caused unrest among the Semitic population. To maintain the stability of the empire it might be necessary for us to let them practice their religion in peace."
+rebuild_aedes_iovi_optimi_maximi_title: "Rebuild the Temple of Iuppiter"
+rebuild_aedes_iovi_optimi_maximi_desc: "As Roma is restored from the hands of Galileans to us, it is time to rebuild the once great Temple of Iuppiter at Capitoline Hill, and restore the glories of our sole Dominus."
+another_rome_not_semitic:0 "Your ally must not follow the Semitic beliefs!"
+iovian_domninat:0 "The Iovianism must be dominant in [Root.GetName]!"
