@@ -1,0 +1,14 @@
+#Province Scope unless otherwise specified
+
+in_circummedierranean_region = {
+	OR = {
+		region = italy_region
+		region = balkan_region
+		region = iberia_region
+		region = anatolia_region
+		region = mashriq_region
+		region = maghreb_region
+		area = provence_area
+		area = carinthia_area
+	}
+}

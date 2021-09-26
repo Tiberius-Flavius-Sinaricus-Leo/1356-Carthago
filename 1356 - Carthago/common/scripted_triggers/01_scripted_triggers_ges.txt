@@ -1,0 +1,7 @@
+romans_who_speak_latin = {
+	OR = {
+		culture_group = roman_group
+		tag = RAF
+		tag = WRE
+	}
+}

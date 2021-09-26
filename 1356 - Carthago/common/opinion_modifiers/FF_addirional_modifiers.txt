@@ -1,0 +1,15 @@
+opinion_roman_alliance = {
+	opinion = 100
+}
+
+state_religion_banned = {
+	opinion = -30
+}
+
+recognition_rejected = {
+	opinion = -50
+}
+
+illegitimate_emperor = {
+	opinion = -100
+}
