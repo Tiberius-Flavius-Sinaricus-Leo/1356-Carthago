@@ -1,0 +1,104 @@
+country_decisions = {
+	ban_semitic_monotheism = {
+		potential = {
+			NOT = { has_country_modifier = semitic_monotheism_banned }
+			NOT = { has_country_modifier = religious_tolerance }
+			NOT = { full_idea_group = humanist_ideas }
+			religion_group = greco_roman_polytheism_group
+			OR = {
+				tag = ROM
+				tag = WRE
+				tag = BYZ
+				tag = RAF
+			}
+		}
+		allow = {
+			adm_power = 100
+			any_owned_province = {
+				OR = {
+					religion = jewish
+					religion_group = christian
+					religion_group = muslim
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = another_rome_not_semitic
+				if = {
+					limit = { alliance_with = BYZ }
+					BYZ = {
+						NOR = {
+							religion = jewish
+							religion_group = christian
+							religion_group = muslim
+						}
+					}
+				}
+				else_if = {
+					limit = { alliance_with = WRE }
+					WRE = {
+						NOR = {
+							religion = jewish
+							religion_group = christian
+							religion_group = muslim
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = -100
+			add_country_modifier = {
+				name = semitic_monotheism_banned
+				duration = -1
+			}
+			every_known_country = {
+				limit = {
+					OR = {
+						religion = jewish
+						religion_group = christian
+						religion_group = muslim
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = state_religion_banned
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	legalize_semitic_monotheism = {
+		potential = {
+			has_country_modifier = semitic_monotheism_banned
+		}
+		allow = {
+			adm_power = 100
+		}
+		effect = {
+			add_adm_power = -100
+			remove_country_modifier = semitic_monotheism_banned
+			add_country_modifier = {
+				name = "religious_tolerance"
+				duration = 7300
+			}
+			every_known_country = {
+				limit = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = state_religion_banned
+					}
+				}
+				remove_opinion = {
+					who = ROOT
+					modifier = state_religion_banned
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

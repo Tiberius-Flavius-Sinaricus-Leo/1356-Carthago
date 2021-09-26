@@ -1,0 +1,78 @@
+country_decisions = {
+
+	renovatio_imperii_occidentalis = {
+		major = yes
+		potential = {
+			tag = RAF
+			NOT = { has_country_flag = formed_westrome_flag }
+			NOT = { exists = WRE }
+			NOT = { exists = ROM }
+			culture_group = roman_group
+			OR = {
+				religion_group = christian
+				religion_group = greco_roman_polytheism_group
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 20
+				}
+			}
+		}
+		provinces_to_highlight = {
+			region = italy_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			italy_region = {
+				type = all
+				owned_by = ROOT
+			}
+			118 = {
+				is_core = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					is_elector = no
+					is_emperor = no
+				}
+				emperor = {
+					add_opinion = {
+						who = root
+						modifier = opinion_left_empire
+					}
+				}
+				set_in_empire = no
+				emperor = {
+					country_event = { id = hre_event.5 }
+				}
+			}
+			change_tag = WRE
+			restore_country_name_effect = yes
+			add_prestige = 25
+			set_country_flag = formed_westrome_flag
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
