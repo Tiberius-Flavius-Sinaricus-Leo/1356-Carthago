@@ -1,0 +1,14 @@
+cb_war_of_two_western_emperors = {
+	valid_for_subject = no
+	ai_peace_desire = -30
+
+	prerequisites = {
+		romans_who_speak_latin = yes
+		is_free_or_tributary_trigger = yes
+		government_rank = 3
+		hre_size = 1 #HRE has to NOT be disbanded.
+		FROM = { is_emperor = yes }
+	}
+
+	war_goal = war_of_two_western_emperors
+}
