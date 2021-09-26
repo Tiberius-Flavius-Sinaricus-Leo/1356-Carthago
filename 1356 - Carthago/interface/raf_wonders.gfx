@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+        name = "GFX_great_project_urbs_carthago"	
+        texturefile = "gfx//interface//great_projects//urbs_carthago.dds"
+    }
+	spriteType = {
+        name = "GFX_great_project_aedes_iovi_optimi_maximi"	
+        texturefile = "gfx//interface//great_projects//aedes_iovi_optimi_maximi.dds"
+    }
+}

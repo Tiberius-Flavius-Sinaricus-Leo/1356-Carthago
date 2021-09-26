@@ -1,0 +1,32 @@
+spriteTypes = {
+	#Event pictures
+	spriteType = {
+		name = "like_vandals_pic"
+		texturefile = "gfx/event_pictures/like_vandals.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "pontifex_pic"
+		texturefile = "gfx/event_pictures/pontifex.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "roma_urbs_pic"
+		texturefile = "gfx/event_pictures/roma.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "carthago_urbs_pic"
+		texturefile = "gfx/event_pictures/carthago.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "augustus_pic"
+		texturefile = "gfx/event_pictures/augustus.dds"
+		allwaystransparent = yes
+	}
+}

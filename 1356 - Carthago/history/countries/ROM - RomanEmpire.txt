@@ -1,0 +1,6 @@
+government = monarchy
+add_government_reform = roman_empire_reform
+primary_culture = roman
+religion = catholic
+technology_group = romanus
+capital = 118 # Rome

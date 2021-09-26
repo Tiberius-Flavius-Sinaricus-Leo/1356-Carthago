@@ -1,0 +1,58 @@
+# - Sicca Veneria
+
+owner = RAF
+controller = RAF
+culture = late_roman
+religion = roman_polytheism
+capital = "Sicca Veneria"
+trade_goods = books
+hre = no
+base_tax = 6
+base_production = 5
+base_manpower = 2
+is_city = yes
+fort_15th = yes
+
+add_core = RAF
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = romanus
+
+discovered_by = muslim
+discovered_by = ottoman
+
+
+534.1.1 = {
+	controller = BYZ
+	owner = BYZ
+	add_core = BYZ
+	religion = orthodox
+}
+
+670.1.1 = {
+	owner = TUN
+	controller = TUN
+	add_core = TUN
+}
+
+900.1.1 = {
+	controller = BYZ
+	owner = BYZ
+}
+
+
+1204.4.13 = {
+	owner = RAF
+	controller = RAF
+	add_core = RAF
+}
+
+1262.1.1 = {
+	remove_core = BYZ
+}
+
+1290.1.1 = {
+	religion = roman_polytheism
+}
+

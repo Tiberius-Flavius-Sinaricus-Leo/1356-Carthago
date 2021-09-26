@@ -1,0 +1,12 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "wonder_temple_of_jupiter_mesh"
+		file = "gfx/models/Buildings/wonder_temple_of_jupiter.mesh"			
+		
+		scale = 1.0
+		
+		cull_distance = 700.0f
+	}
+			
+}

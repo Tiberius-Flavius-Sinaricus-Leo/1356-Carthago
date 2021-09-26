@@ -1,0 +1,382 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_advisor_roman_group_philosopher"
+		texturefile = "gfx//interface//advisors//adm//antike_philosopher.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_philosopher_female"
+		texturefile = "gfx//interface//advisors//adm//antike_philosopher_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_natural_scientist"
+		texturefile = "gfx//interface//advisors//adm//antike_natural_scientist.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_natural_scientist_female"
+		texturefile = "gfx//interface//advisors//adm//antike_natural_scientist_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_artist"
+		texturefile = "gfx//interface//advisors//adm//antike_artist.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_artist_female"
+		texturefile = "gfx//interface//advisors//adm//antike_artist_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_treasurer"
+		texturefile = "gfx//interface//advisors//adm//antike_treasurer.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_treasurer_female"
+		texturefile = "gfx//interface//advisors//adm//antike_treasurer_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_theologian"
+		texturefile = "gfx//interface//advisors//adm//antike_theologian.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_theologian_female"
+		texturefile = "gfx//interface//advisors//adm//antike_theologian_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_master_of_mint"
+		texturefile = "gfx//interface//advisors//adm//antike_master_of_mint.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_master_of_mint_female"
+		texturefile = "gfx//interface//advisors//adm//antike_master_of_mint_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_inquisitor"
+		texturefile = "gfx//interface//advisors//adm//antike_inquisitor.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_inquisitor_female"
+		texturefile = "gfx//interface//advisors//adm//antike_inquisitor_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_statesman"
+		texturefile = "gfx//interface//advisors//dip//antike_statesman.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_statesman_female"
+		texturefile = "gfx//interface//advisors//dip//antike_statesman_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_naval_reformer"
+		texturefile = "gfx//interface//advisors//dip//antike_naval_reformer.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_naval_reformer_female"
+		texturefile = "gfx//interface//advisors//dip//antike_naval_reformer_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_trader"
+		texturefile = "gfx//interface//advisors//dip//antike_trader.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_trader_female"
+		texturefile = "gfx//interface//advisors//dip//antike_trader_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_spymaster"
+		texturefile = "gfx//interface//advisors//dip//antike_spymaster.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_spymaster_female"
+		texturefile = "gfx//interface//advisors//dip//antike_spymaster_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_colonial_governor"
+		texturefile = "gfx//interface//advisors//dip//antike_colonial_governor.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_colonial_governor_female"
+		texturefile = "gfx//interface//advisors//dip//antike_colonial_governor_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_diplomat"
+		texturefile = "gfx//interface//advisors//dip//antike_diplomat.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_diplomat_female"
+		texturefile = "gfx//interface//advisors//dip//antike_diplomat_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_navigator"
+		texturefile = "gfx//interface//advisors//dip//antike_navigator.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_navigator_female"
+		texturefile = "gfx//interface//advisors//dip//antike_navigator_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_fortification_expert"
+		texturefile = "gfx//interface//advisors//mil//antike_military_engineer.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_fortification_expert_female"
+		texturefile = "gfx//interface//advisors//mil//antike_military_engineer_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_recruitmaster"
+		texturefile = "gfx//interface//advisors//mil//antike_master_recruiter.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_recruitmaster_female"
+		texturefile = "gfx//interface//advisors//mil//antike_master_recruiter_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_quartermaster"
+		texturefile = "gfx//interface//advisors//mil//antike_quartermaster.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_quartermaster_female"
+		texturefile = "gfx//interface//advisors//mil//antike_quartermaster_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_commandant"
+		texturefile = "gfx//interface//advisors//mil//antike_commandant.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_commandant_female"
+		texturefile = "gfx//interface//advisors//mil//antike_commandant_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_army_organiser"
+		texturefile = "gfx//interface//advisors//mil//antike_army_organizer.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_army_organiser_female"
+		texturefile = "gfx//interface//advisors//mil//antike_army_organizer_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_grand_captain"
+		texturefile = "gfx//interface//advisors//mil//antike_grand_captain.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_grand_captain_female"
+		texturefile = "gfx//interface//advisors//mil//antike_grand_captain_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_army_reformer"
+		texturefile = "gfx//interface//advisors//mil//antike_army_reformer.dds"
+		noOfFrames = 1
+
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_roman_group_army_reformer_female"
+		texturefile = "gfx//interface//advisors//mil//antike_army_reformer_female.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+}

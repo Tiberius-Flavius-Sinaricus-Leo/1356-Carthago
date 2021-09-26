@@ -1,0 +1,26 @@
+spriteTypes = {
+	spriteType = {
+		name = "government_reform_spqr"
+		texturefile = "gfx//interface//government_reform_icons//spqr.dds"
+	}
+	spriteType = {
+		name = "government_reform_provinciae"
+		texturefile = "gfx//interface//government_reform_icons//provinciae.dds"
+	}
+	spriteType = {
+		name = "government_reform_senate"
+		texturefile = "gfx//interface//government_reform_icons//senate.dds"
+	}
+	spriteType = {
+		name = "government_reform_legislation"
+		texturefile = "gfx//interface//government_reform_icons//legislation.dds"
+	}
+	spriteType = {
+		name = "government_reform_bureaucracy"
+		texturefile = "gfx//interface//government_reform_icons//bureaucracy.dds"
+	}
+	spriteType = {
+		name = "government_reform_roman_empire"
+		texturefile = "gfx//interface//government_reform_icons//roman_empire_reform.dds"
+	}
+}

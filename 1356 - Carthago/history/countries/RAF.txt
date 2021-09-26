@@ -1,0 +1,41 @@
+government = monarchy
+add_government_reform = roman_empire_reform
+government_rank = 2
+primary_culture = late_roman
+religion = roman_polytheism
+technology_group = romanus
+capital = 341 # Carthago
+
+historical_friend = KNI
+historical_rival = KOJ
+
+1340.7.21 = {
+	monarch = {
+		name = "Fabianus I Maximus"
+		dynasty = "Carthaginensis"
+		birth_date = 1325.1.3
+		adm = 5
+		dip = 3
+		mil = 5
+		religion = roman_polytheism
+		leader = {	name = "Fabianus I Carthaginensis"	type = general	fire = 4	shock = 3	manuever = 6	siege = 4 }
+	}
+}
+
+1340.7.22 = {
+	heir = {
+		name = "Alexander Maximus"           # Name of heir
+		monarch_name = "Alexander II Maximus"     # Name of heir if they become a ruler
+		dynasty = "Carthaginensis"         # Dynasty of heir
+		birth_date = 1335.9.13        # Used to set the age of the heir. Derived from the date of the history entry the monarch scope is found in.
+		death_date = 1390.5.29
+		claim = 85               # Strength of claim for heir
+		adm = 4                 # ADM skill of the heir
+		dip = 4                 # DIP skill of the heir
+		mil = 6                # MIL skill of the heir
+	}
+}
+
+
+
+

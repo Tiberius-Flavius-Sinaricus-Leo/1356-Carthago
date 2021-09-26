@@ -1,0 +1,30 @@
+spriteTypes = {
+	spriteType = {
+		name = "mission_augustus_et_barbari"
+		texturefile = "gfx//interface//missions//augustus_et_barbari.dds"
+	}
+	spriteType = {
+		name = "mission_roma"
+		texturefile = "gfx//interface//missions//roma.dds"
+	}
+	spriteType = {
+		name = "mission_latinization"
+		texturefile = "gfx//interface//missions//latina.dds"
+	}
+	spriteType = {
+		name = "mission_versacrum"
+		texturefile = "gfx//interface//missions//versacrum.dds"
+	}
+	spriteType = {
+		name = "mission_syagrius"
+		texturefile = "gfx//interface//missions//syagrius.dds"
+	}
+	spriteType = {
+		name = "mission_byz"
+		texturefile = "gfx//interface//missions//byzantium.dds"
+	}
+	spriteType = {
+		name = "mission_silk_trade"
+		texturefile = "gfx//interface//missions//silk_trade.dds"
+	}
+}

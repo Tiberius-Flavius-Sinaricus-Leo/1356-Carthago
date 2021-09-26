@@ -1,0 +1,39 @@
+#All fictional, of course...
+advisor = {
+	advisor_id = 5004
+	name = "Phlabios Apollodoros Psellos"
+	location = 341 #Carthago
+	discount = yes
+	skill = 3
+	culture = greek
+	religion = hellenic_pagan
+	type = natural_scientist
+	date = 1356.1.1
+	death_date = 1380.1.1
+}
+
+advisor = {
+	advisor_id = 5005
+	name = "Marius Heinrich von Laurensberg"
+	location = 341 #Carthago
+	discount = yes
+	skill = 3
+	culture = hannoverian
+	religion = catholic
+	type = commandant
+	date = 1356.1.1
+	death_date = 1380.1.1
+}
+
+advisor = {
+	advisor_id = 5006
+	name = "Theoderikos Apsimaros"
+	location = 341 #Carthago
+	discount = yes
+	skill = 3
+	culture = goths
+	religion = orthodox
+	type = diplomat
+	date = 1356.1.1
+	death_date = 1380.1.1
+}
