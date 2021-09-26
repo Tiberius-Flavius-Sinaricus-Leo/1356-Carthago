@@ -1,0 +1,32 @@
+defined_text = {
+    name = GetSenatoresName
+
+    text = {
+        localisation_key = PATRICII
+        trigger = {
+            NOT = { has_reform = senate_reform }
+			NOT = { culture_group = byzantine }
+        }
+    }
+    text = {
+        localisation_key = SENATORES
+        trigger = {
+            has_reform = senate_reform
+			NOT = { culture_group = byzantine }
+        }
+    }
+	text = {
+        localisation_key = PATRIKIOI
+        trigger = {
+            NOT = { has_reform = senate_reform }
+			culture_group = byzantine
+        }
+    }
+    text = {
+        localisation_key = SYNKLETIKOI
+        trigger = {
+            has_reform = senate_reform
+			culture_group = byzantine
+        }
+    }
+}
