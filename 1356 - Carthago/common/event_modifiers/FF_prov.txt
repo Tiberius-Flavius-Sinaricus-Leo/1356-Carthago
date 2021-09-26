@@ -1,0 +1,37 @@
+iulian_walls = { #Carthago
+	local_defensiveness = 0.3
+}
+
+roma_tertia = { #Carthago
+	local_production_efficiency = 0.15
+	local_tax_modifier = 0.15
+}
+
+
+curia_iulia = { #Roma
+	local_development_cost = -0.2
+	local_autonomy = -0.05
+	local_tax_modifier = 0.15
+}
+
+#Estates:
+
+estate_senatores_monopoly_of_incense_mod = {
+	local_production_efficiency = -10
+}
+
+estate_senatores_monopoly_of_wine_mod = {
+	local_production_efficiency = -10
+}
+
+estate_senatores_monopoly_of_metals_mod = {
+	local_production_efficiency = -10
+}
+
+estate_senatores_monopoly_of_gems_mod = {
+	local_production_efficiency = -10
+}
+
+estate_senatores_monopoly_of_paper_mod = {
+	local_production_efficiency = -10
+}

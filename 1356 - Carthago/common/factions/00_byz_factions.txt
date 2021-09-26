@@ -1,0 +1,47 @@
+#These are taken directly from the Renovatio Imperii mod, used with permission //Dub
+
+########################################
+# Empire Factions
+########################################
+
+logothete_general =
+{
+	monarch_power = ADM
+	always = yes
+
+	modifier = 
+	{
+		advisor_cost = -0.05
+		global_tax_modifier = 0.1
+		yearly_corruption = 0.1
+		state_maintenance_modifier = 0.1
+	}
+}
+
+logothete_postal =
+{
+	monarch_power = DIP
+	always = yes
+
+	modifier = 
+	{
+		diplomatic_reputation = 2
+		ae_impact = -0.05
+		land_morale = -0.1
+		defensiveness = -0.15
+	}
+}
+
+logothete_military =
+{
+	monarch_power = MIL
+	always = yes
+
+	modifier = 
+	{
+		free_leader_pool = 2
+		war_exhaustion = -0.03
+		global_trade_goods_size_modifier = -0.1
+		ae_impact = 0.1
+	}
+}

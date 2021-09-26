@@ -1,0 +1,98 @@
+africanus = {
+	ae_impact = -0.1
+	core_creation = -0.1
+}
+
+bellum_gallicum = {
+	core_creation = -0.1
+	land_morale = 0.1
+}
+
+der_echte_kaisar = {
+	diplomatic_reputation = 3
+	legitimacy = 1
+	max_absolutism = 10
+}
+
+growth_of_the_iovianism = {
+	global_missionary_strength = 0.03
+	culture_conversion_cost = -0.15
+	religious_unity = 0.25
+}
+
+hometown_of_romans = {
+	culture_conversion_cost = -0.15
+	global_tax_modifier = 0.25
+	stability_cost_modifier = -0.25
+}
+
+like_gaius_the_bold = {
+	discipline = 0.05
+	land_morale = 0.2
+}
+
+like_tiberius_the_lame = {
+	ae_impact = -0.1
+	core_creation = -0.1
+}
+
+like_vandals = {
+	land_morale = 0.1
+	infantry_power = 0.15
+}
+
+renascentia_vera = {
+	technology_cost = -0.1
+	idea_cost = -0.1
+    global_institution_spread = 0.1
+}
+
+roma_relecta = {
+	legitimacy = 2
+	prestige = 2
+	diplomatic_reputation = 2
+}
+
+discovery_outpost = {
+	colonists = 1
+	range = 0.2
+}
+
+raf_colonial_enthusiasm = {
+	colonist_placement_chance = 0.05
+	global_colonial_growth = 25
+}
+
+mundus_novus = {
+	colonist_placement_chance = 0.05
+	global_colonial_growth = 15
+	range = 0.5
+}
+
+##Imported:
+atlantic_window = {
+	global_colonial_growth = 15
+	range = 0.2
+}
+mediterranean_island_hegemon = {
+	ship_durability = 0.05
+}
+italian_ambition = {
+	global_institution_spread = 0.25
+	ae_impact = -0.05
+}
+caesar_augusta = {
+	prestige = 1
+	land_morale = 0.05
+}
+eastern_trade_route = {
+	merchants = 1
+	trade_steering  = 0.1
+}
+western_trade_dominance = {
+	merchants = 1
+	trade_steering  = 0.1
+}
+treasury_built = {
+	inflation_action_cost = -0.35
+}

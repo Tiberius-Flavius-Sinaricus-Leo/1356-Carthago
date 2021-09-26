@@ -1,0 +1,17 @@
+estate_senatores = {
+	modifier_definition = {
+		type = loyalty
+		key = senatores_loyalty_modifier
+		trigger = {
+			has_estate = estate_senatores
+		}
+	}
+
+	modifier_definition = {
+		type = influence
+		key = senatores_influence_modifier
+		trigger = {
+			has_estate = estate_senatores
+		}
+	}
+}

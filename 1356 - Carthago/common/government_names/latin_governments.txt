@@ -1,0 +1,155 @@
+latin_roman_monarchy = {
+	rank = {
+		1 = REGNVLVM
+		2 = REGNVM
+		3 = IMPERIVM
+	}
+
+	ruler_male = {
+		1 = REX
+		2 = CAESAR
+		3 = IMPERATOR
+	}
+
+	ruler_female = {
+		1 = REGINA
+		2 = CAESARINA
+		3 = IMPERATRIX
+	}
+	
+	consort_male = {
+		1 = REX
+		2 = CAESAR
+		3 = AVGVSTVS
+	}
+
+	consort_female = {
+		1 = REGINA
+		2 = CAESARINA
+		3 = AVGVSTA
+	}
+
+	heir_male = {
+		1 = PRINCEPS
+		2 = PRINCEPS
+		3 = COIMPERATOR
+	}
+
+	heir_female = {
+		1 = PRINCIPISSA
+		2 = PRINCIPISSA
+		3 = COIMPERATRIX
+	}
+	
+	trigger = {
+		government = monarchy
+		OR = {
+			tag = ROM
+			tag = RAF
+			tag = WRE
+			AND = {
+				tag = BYZ
+				culture_group = roman_group
+			}
+		}
+	}
+}
+
+rom_subject_monarchy = {
+	rank = {
+		1 = CLIENS
+		2 = CLIENS
+		3 = CLIENS
+	}
+
+	ruler_male = {
+		1 = REXSOCIVSETAMICVS
+		2 = REXSOCIVSETAMICVS
+		3 = REXSOCIVSETAMICVS
+	}
+
+	ruler_female = {
+		1 = REGIASOCIAETAMICA
+		2 = REGIASOCIAETAMICA
+		3 = REGIASOCIAETAMICA
+	}
+	
+	consort_male = {
+		1 = REXSOCIVSETAMICVS
+		2 = REXSOCIVSETAMICVS
+		3 = REXSOCIVSETAMICVS
+	}
+
+	consort_female = {
+		1 = REXSOCIVSETAMICVS
+		2 = REXSOCIVSETAMICVS
+		3 = REXSOCIVSETAMICVS
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			is_subject_of = ROM
+			is_subject_of = RAF
+			is_subject_of = WRE
+			AND = {
+				is_subject_of = BYZ
+				BYZ = {
+					culture_group = roman_group
+				}
+			}
+		}
+		is_lesser_in_union = no #To avoid PU's.
+		is_colonial_nation = no #To avoid colonial nations.
+	}
+}
+
+rom_subject_republic = { #Titles For vassal republics. Historically was a thing for Italian city-states in the 9th and 10th century.
+	#Apparently there is such a thing as kingdom and empire vassals - You just need to release them from your own lands!
+	rank = {
+		1 = CONSVLATVS
+		2 = CONSVLATVS
+		3 = CONSVLATVS
+	}
+
+	ruler_male = {
+		1 = CONSVL
+		2 = CONSVL
+		3 = CONSVL
+	}
+
+	ruler_female = {
+		1 = CONSVLA
+		2 = CONSVLA
+		3 = CONSVLA
+	}
+	#Can republics even have consorts??
+	consort_male = {
+		1 = CONSVL
+		2 = CONSVL
+		3 = CONSVL
+	}
+
+	consort_female = {
+		1 = CONSVLA
+		2 = CONSVLA
+		3 = CONSVLA
+	}
+
+	trigger = {
+		government = republic
+		OR = {
+			is_subject_of = ROM
+			is_subject_of = RAF
+			is_subject_of = WRE
+			AND = {
+				is_subject_of = BYZ
+				BYZ = {
+					culture_group = roman_group
+				}
+			}
+		}
+		is_lesser_in_union = no #To avoid PU's.
+		is_colonial_nation = no #To avoid colonial nations.
+	}
+}

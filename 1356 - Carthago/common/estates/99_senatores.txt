@@ -1,0 +1,197 @@
+estate_senatores = {
+	icon = 12
+	
+	trigger = {
+		has_government_attribute = enables_roman_estates
+		is_nomad = no
+		is_colonial_nation = no
+		NOT = { has_government_attribute = is_merchant_republic }
+		NOT = { has_reform = pirate_republic_reform }
+		NOT = { has_reform = veche_republic }
+		NOT = { has_reform = cossacks_reform }
+		NOT = { government = native }
+		NOT = { has_reform = trading_city }
+		NOT = { has_reform = siberian_tribe }
+		NOT = { is_revolutionary_republic_trigger = yes }
+		NOT = { has_reform = revolutionary_empire_reform }
+		NOT = { has_reform = peasants_republic }
+		NOT = { has_reform = american_republic }
+		NOT = { has_reform = federal_republic }
+	}
+	
+	country_modifier_happy = {
+		administrative_efficiency = 0.2
+		global_tax_modifier = 0.2
+		global_autonomy = -0.15
+	}
+	country_modifier_neutral = {
+		administrative_efficiency = 0.2
+	}	
+	country_modifier_angry = {
+		administrative_efficiency = -0.1
+		global_unrest = 2
+		yearly_corruption = 0.1
+	}
+	
+	land_ownership_modifier = {
+		senatores_loyalty_modifier = 0.25
+	}
+	
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = owner
+			religion_group = owner
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 5
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_state_core = owner }
+		}
+	}
+	
+	base_influence = 10
+	
+	influence_modifier = {
+		desc = EST_VAL_SENATORIAL_TRADITION
+		trigger = {
+			has_reform = senate_reform
+			OR = {
+				tag = ROM
+				tag = WRE
+				tag = RAF
+				tag = BYZ
+			}
+		}
+		influence = 5
+	}
+	
+	influence_modifier = {
+		desc = EST_VAL_CURIA_IULIA_RESTORED
+		trigger = {
+			has_reform = senate_reform
+			OR = {
+				tag = ROM
+				tag = WRE
+				tag = RAF
+				tag = BYZ
+			}
+			capital = 118
+			118 = {
+				has_province_modifier = curia_iulia
+			}
+		}
+		influence = 5
+	}
+	
+	influence_modifier = {
+		desc = EST_VAL_AVGVSTA_SENATORIS_INF
+		trigger = {
+			has_dlc = "Rights of Man"
+			has_consort = yes
+			is_origin_of_consort = ROOT
+		}
+		influence = 5
+    }
+	
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			OR = {
+				has_disaster = estate_burghers_disaster
+			}
+		}
+		influence = -40
+	}
+	
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			OR = {
+				has_disaster = estate_burghers_disaster
+			}
+		}
+		loyalty = -20
+	}
+	
+	loyalty_modifier = {
+		desc = EST_VAL_AVGVSTA_SENATORIS_LOY
+		trigger = {
+			has_dlc = "Rights of Man"
+			has_consort = yes
+			is_origin_of_consort = ROOT
+		}
+		loyalty = 5
+    }
+	
+	custom_name = {
+		desc = estate_patricii
+		trigger = {
+			NOT = { has_reform = senate_reform }
+		}
+	}
+	
+	custom_name = {
+		desc = estate_synkletikoi
+		trigger = {
+			has_reform = senate_reform
+			culture_group = byzantine
+		}
+	}
+	
+	custom_name = {
+		desc = estate_patrikioi
+		trigger = {
+			NOT = { has_reform = senate_reform }
+			culture_group = byzantine
+		}
+	}
+	
+	
+	
+	color = { 190 40 80 }
+	
+	privileges = {
+		estate_senatores_land_rights
+		estate_senatores_primacy
+		estate_senatores_supremacy_over_crown
+		estate_senatores_right_of_counsel
+		estate_senatores_consul_perpetuo
+		estate_senatores_power_of_local_appointment
+		estate_senatores_monopoly_of_incense
+		estate_senatores_monopoly_of_wine
+		estate_senatores_monopoly_of_metals
+		estate_senatores_monopoly_of_gems
+		estate_senatores_statutory_rights
+	}
+
+	agendas = {
+		estate_senatores_develop_x
+		estate_senatores_build_courthouse_in_y
+		estate_senatores_build_university_in_y
+		estate_senatores_get_allies
+		estate_senatores_befriend_rival_of_rival
+		estate_senatores_retake_core
+		estate_senatores_reduce_war_exhaustion
+		estate_senatores_restore_legitimacy
+		estate_senatores_relations_with_X
+		estate_senatores_convert_province_culture
+		estate_senatores_protect_our_culture
+		estate_senatores_vassalise_vulnerable_country
+		estate_senatores_annex_subject
+		estate_senatores_hire_advisor
+		estate_senatores_fire_advisor
+	}
+	
+	influence_from_dev_modifier = 1.0
+	
+	
+}
