@@ -1,0 +1,4 @@
+entity = {
+	name = "wonder_temple_of_jupiter_entity"
+	pdxmesh = "wonder_temple_of_jupiter_mesh"
+}
