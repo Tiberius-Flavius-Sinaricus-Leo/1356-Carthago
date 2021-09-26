@@ -1,0 +1,2612 @@
+raf_iii = {
+	slot = 3                 # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.  
+	
+	# Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	raf_build_an_army = {
+		icon = mission_assemble_an_army
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		trigger = {
+			army_size_percentage = 1 #What you need to complete the mission, displayed for mission tooltip
+		}
+		effect = { #This is what you get after you finished your mission.
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125 #25 years
+			}
+			custom_tooltip = tripolitania_claims
+			hidden_effect = {
+				tripolitania_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				djerba_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = numidia_claims
+			hidden_effect = {
+				kabylia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				ouled_nail_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = sardinia_claims
+			hidden_effect = {
+				corsica_sardinia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = sicilia_claims
+			hidden_effect = {
+				sicily_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				western_sicily_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+raf_i = {
+	slot = 1                 # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.  
+	
+	# Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	raf_byzantine_question = {
+		icon = mission_byz
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		trigger = {
+			OR = {
+				NOT = { exists = BYZ }
+				BYZ = {
+					OR = {
+						alliance_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = byz_question_tooltip
+			if = {
+				limit = {
+					NOT = { exists = BYZ }
+				}
+				hidden_effect = {
+					thrace_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					BYZ = {
+						OR = {
+							alliance_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				hidden_effect = {
+					BYZ = {
+						add_opinion = {
+							who = ROOT
+							modifier = opinion_roman_alliance
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+raf_iiii = {
+	slot = 4                # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.  
+	
+	# Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	raf_naval_force = {
+		icon = mission_aragonese_navy
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		trigger = {
+			naval_forcelimit = 30
+			navy_size_percentage = 0.9
+			num_of_admirals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "naval_enthusiasm_mission"
+				duration = 9125 #25 years
+			}
+		}
+	}
+}
+
+raf_iiiii = {
+	slot = 5                 # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.  
+	
+	# Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	raf_build_a_treasury = {
+		icon = mission_war_chest
+		required_missions = {  }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			#None
+		}
+		
+		trigger = {
+			treasury = 2000
+			NOT = { num_of_loans = 1 }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "treasury_built"
+				duration = 1825
+			}
+			define_advisor = {
+				type = treasurer
+				skill = 2
+				discount = yes
+			}
+			define_advisor = {
+				type = master_of_mint
+				skill = 2
+				discount = yes
+			}
+		}
+	}
+	raf_eastern_trade_route_to_carthago = {
+		icon = mission_silk_trade
+		required_missions = { raf_naval_force }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 377
+				province_id = 358
+				province_id = 341
+			}
+		}
+		
+		trigger = {
+			377 = { #Beroea
+				is_strongest_trade_power = ROOT
+			}
+			358 = { #Alexandria
+				is_strongest_trade_power = ROOT
+			}
+			341 = { #Carthago
+				is_strongest_trade_power = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "eastern_trade_route"
+				duration = -1
+			}
+			add_mercantilism = 5
+		}
+	}
+	raf_western_mediterranean_trade = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { raf_eastern_trade_route_to_carthago }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1298
+				province_id = 341
+				province_id = 1295
+				province_id = 1293
+				province_id = 1110
+			}
+		}
+		
+		trigger = {
+			1298 = { #Liguria
+				is_strongest_trade_power = ROOT
+			}
+			341 = { #Carthago
+				is_strongest_trade_power = ROOT
+			}
+			1295 = { #Valentia
+				is_strongest_trade_power = ROOT
+			}
+			1293 = { #Hispalis
+				is_strongest_trade_power = ROOT
+			}
+			1110 = { #Safi
+				is_strongest_trade_power = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "western_trade_dominance"
+				duration = -1
+			}
+			add_mercantilism = 5
+		}
+	}
+}
+
+raf_colonization = {
+    slot = 5                   # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	outpost_of_discovery = { 
+		icon = mission_establish_high_seas_navy
+		required_missions = { }
+		position = 4
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			area = macaronesia_area
+			NOT = { is_empty = yes }
+		}
+		
+		trigger = {
+			macaronesia_area = {
+				type = all
+				OR = {
+					province_id = 367
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "discovery_outpost"
+				duration = -1
+			}
+		}
+	}
+	
+	discovery_of_america = { 
+		icon = mission_look_west
+		required_missions = { outpost_of_discovery }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		trigger = {
+			has_idea_group = exploration_ideas
+			has_idea = quest_for_the_new_world
+			OR = {
+				colonial_eastern_america = {
+					has_discovered = ROOT
+				}
+				colonial_the_carribean = {
+					has_discovered = ROOT
+				}
+				colonial_louisiana = {
+					has_discovered = ROOT
+				}
+				colonial_mexico = {
+					has_discovered = ROOT
+				}
+				colonial_colombia = {
+					has_discovered = ROOT
+				}
+				colonial_la_plata = {
+					has_discovered = ROOT
+				}
+				colonial_brazil = {
+					has_discovered = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "raf_colonial_enthusiasm"
+				duration = 7300
+			}
+		}
+	}
+	
+	colonia_america = { 
+		icon = mission_colonial
+		required_missions = { discovery_of_america }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		trigger = {
+			num_of_explorers = 1
+			any_owned_province = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "mundus_novus"
+				duration = 7300
+			}
+		}
+	}
+}
+
+
+raf_eastern_limes = {
+    slot = 1                   # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+    
+    # The name of the mission, used for localization
+    recover_tripolitania = {
+		icon = mission_early_game_buildings
+		position = 2
+		required_missions = { raf_build_an_army }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = tripolitania_area
+				area = djerba_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			custom_tooltip = cyrenaica_claims
+			hidden_effect = { #Cyrenaica
+				cyrenaica_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				if = {
+					limit = {
+						ouled_nail_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					north_saharan_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+		
+	}
+	
+	conquer_cyrenaica = { #To Cyrenaica!
+		icon = mission_conquer_tunisia
+		position = 3
+		required_missions = { recover_tripolitania }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			area = cyrenaica_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			cyrenaica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			341 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			
+			#Claims
+			custom_tooltip = africa_domination_claims
+			hidden_effect = { 
+				fezzan_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { province_id = 2474 }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+raf_western_limes = {
+    slot = 2                   # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+    
+    # The name of the mission, used for localization
+    recover_numidia = {
+		icon = mission_assemble_an_army
+		position = 2
+		required_missions = { raf_build_an_army }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = kabylia_area
+				area = ouled_nail_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = east_mauretania_claims
+			hidden_effect = { #East Mauretania
+				high_plains_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				barbary_coast_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				if = {
+					limit = {
+						djerba_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					north_saharan_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	recover_east_mauretania = {
+		icon = mission_dominate_home_trade_node
+		position = 3
+		required_missions = {
+			recover_numidia
+		}
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = barbary_coast_area
+				area = ouled_nail_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			custom_tooltip = west_mauretania_claims
+			hidden_effect = { #West Mauretania
+				algiers_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				northern_morocco_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				western_morocco_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = baetica_claims
+			hidden_effect = { #Baetica
+				lower_andalucia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				upper_andalucia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_west_mauretania = {
+		icon = mission_arabian_fort #Placeholder for now.
+		position = 4
+		required_missions = { recover_east_mauretania }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = algiers_area
+				area = northern_morocco_area
+				area = western_morocco_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "atlantic_window"
+				duration = 7300
+			}
+			341 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			custom_tooltip = africa_domination_claims
+			hidden_effect = {
+				tafilalt_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				sus_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				marrekesh_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				southern_morocco_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+raf_africa_misc_i = {
+    slot = 1                   # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	dominate_africa_minor = { 
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { recover_west_mauretania conquer_cyrenaica }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			region = maghreb_region
+			NOT = { is_empty = yes }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			maghreb_region = {
+				type = all
+				OR = {
+					province_id = 2474
+					country_or_non_sovereign_subject_holds = ROOT
+				}	
+			}
+		}
+		
+		effect = {
+			341 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			
+			add_country_modifier = {
+				name = "africanus"
+				duration = -1
+			}
+			
+			#Claims
+			custom_tooltip = lower_aegyptus_claims
+			hidden_effect = {
+				delta_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				bahari_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				gulf_of_arabia_area = {
+					if = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+raf_africa_misc_ii = {
+    slot = 1                   # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		religion = roman_polytheism
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	saracens_out_of_roman_africa = { 
+		icon = mission_versacrum
+		required_missions = { dominate_africa_minor }
+		position = 6
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			region = maghreb_region
+			NOT = { is_empty = yes }
+			religion_group = muslim
+		}
+		
+		trigger = {
+			maghreb_region = {
+				type = all
+				OR = {
+					province_id = 2474
+					religion = roman_polytheism
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "growth_of_the_iovianism"
+				duration = -1
+			}
+		}
+	}
+}
+
+raf_to_the_east = {
+	slot = 1
+	generic = no
+    ai = yes
+    has_country_shield = yes
+
+	potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	into_aegyptus = { 
+		icon = mission_conquer_alexandria
+		required_missions = { saracens_out_of_roman_africa }
+		position = 7
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = bahari_area
+				area = delta_area
+				area = gulf_of_arabia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			gulf_of_arabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			#Claims
+			custom_tooltip = upper_aegyptus_claims
+			hidden_effect = {
+				al_wahat_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				vostani_area = {
+					if = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				said_area = {
+					if = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+raf_west_mediterranean_islands = {
+    slot = 3                 # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+    
+    conquer_sardinia_corsica = { #Sardinia & Corsica
+		icon = mission_galleys_in_port
+		position = 2
+		required_missions = { raf_build_an_army }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			area = corsica_sardinia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			custom_tooltip = baleares_claims
+			hidden_effect = { #Baleares
+				baleares_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	conquer_baleares = {
+		icon = mission_galleys_in_port
+		position = 3
+		required_missions = { conquer_sardinia_corsica }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			area = baleares_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			baleares_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "mediterranean_island_hegemon"
+				duration = -1
+			}
+		}
+	}
+	
+}
+
+
+
+raf_back_to_italy = {
+    slot = 4                  # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+    
+    # The name of the mission, used for localization
+    sicily_takeover = {
+		icon = mission_galleys_in_port
+		position = 2
+		required_missions = { raf_build_an_army }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			custom_tooltip = greater_greece_claims
+			hidden_effect = { #Greater Greece
+				naples_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				calabria_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_greater_greece = { #Get Greater Greece!
+		icon = mission_invade_island
+		required_missions = { sicily_takeover }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = naples_area
+				area = calabria_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			custom_tooltip = apulia_claims
+			hidden_effect = {
+				apulia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_apulia = {
+		icon = mission_invade_island
+		required_missions = { recover_greater_greece }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			area = apulia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			custom_tooltip = roma_claims
+			hidden_effect = { #Road to Rome
+				central_italy_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				lazio_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	road_to_rome = { #Make the Pope bend to you.
+		icon = mission_roma
+		required_missions = { recover_apulia }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = lazio_area
+				area = central_italy_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			lazio_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			central_italy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "roma_relecta"
+				duration = -1
+			}
+			
+			#Claims
+			custom_tooltip = central_italy_claims
+			hidden_effect = { #Central Italy
+				tuscany_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				emilia_romagna_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_central_italy = { #Take Central Italy!
+		icon = a_real_roman_empire
+		required_missions = { road_to_rome }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = tuscany_area
+				area = emilia_romagna_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			tuscany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			emilia_romagna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "italian_ambition"
+				duration = 5475
+			}
+			
+			custom_tooltip = gallia_cisalpina_claims
+			hidden_effect = { #Lombardy
+				lombardy_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				po_valley_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				piedmont_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				liguria_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			
+			custom_tooltip = veneto_claims
+			hidden_effect = { #Venetia Histria
+				venetia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				carinthia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_gallia_cisalpina = { #Following Iulius Caesar's footprints...
+		icon = complete_the_risorgimento
+		required_missions = { recover_central_italy }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = lombardy_area
+				area = po_valley_area
+				area = piedmont_area
+				area = liguria_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			lombardy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			po_valley_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			piedmont_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			liguria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			#Claims
+			custom_tooltip = narbonia_claims_1
+			if = {
+				limit = {
+					mission_completed = recover_tarraconensis
+				}
+				hidden_effect = { #Narbonia
+					savoy_dauphine_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					languedoc_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					provence_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			
+			}
+		}
+	}
+	
+	reromanization_of_italia = { #Total restoration of Italia
+		icon = mission_latinization
+		required_missions = { venetia_histria_takeover recover_gallia_cisalpina }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			region = italy_region
+			NOT = { culture_group = roman_group }
+		}
+		
+		trigger = {
+			italy_region = {
+				type = all
+				culture_group = roman_group
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "renascentia_vera"
+				duration = -1
+			}
+			118 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+		}
+	}
+
+	
+}
+
+raf_italia_rest = {
+    slot = 5                  # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon. 
+	
+	potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	venetia_histria_takeover = { #Total restoration of Italia
+		icon = end_genoese_competition
+		position = 7
+		required_missions = { recover_central_italy }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = carinthia_area
+				area = venetia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			carinthia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			venetia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			emperor = { #Logically you've taken parts of the Empire away from them.
+				add_imperial_influence = -10
+			}
+			
+			add_country_modifier = {
+				name = "hometown_of_romans"
+				duration = -1
+			}
+		}
+	}
+}
+
+
+
+raf_hispania_1 = {
+    slot = 3                  # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.  
+	
+	potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	recover_baetica = { #Into Baetica!
+		icon = mission_rb_take_gibraltar
+		position = 4
+		required_missions = { recover_east_mauretania }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = upper_andalucia_area
+				area = lower_andalucia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			lower_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			upper_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			
+			#Claims
+			custom_tooltip = lusitania_claims
+			hidden_effect = { #Lusitania
+				alentejo_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				extremadura_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				beieras_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = carthaginensis_claims
+			hidden_effect = { #Carthago Nova
+				toledo_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_carthaginensis = {
+		icon = mission_invade_island
+		required_missions = { recover_baetica }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = toledo_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			toledo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			#Claims
+			custom_tooltip = tarraconia_claims
+			hidden_effect = { #Tarraconia
+				catalonia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				aragon_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				castille_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				valencia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				basque_country = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+		
+		
+	}
+	
+	recover_tarraconensis = {
+		icon = mission_invade_island
+		required_missions = { recover_carthaginensis }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = castille_area
+				area = aragon_area
+				area = catalonia_area
+				area = basque_country
+				area = valencia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			castille_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			aragon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			catalonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			valencia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			basque_country = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_ruler_modifier = {
+				name = "caesar_augusta"
+				duration = -1 
+			}
+			
+			if = {
+				limit = {
+					mission_completed = recover_gallia_cisalpina
+				}
+				custom_tooltip = narbonia_claims
+				hidden_effect = { #Narbonia
+					savoy_dauphine_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					languedoc_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					provence_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			
+			}
+			
+			custom_tooltip = galicia_claims_tier_1
+			if = {
+				limit = {
+					mission_completed = recover_lusitania
+				}
+				hidden_effect = { #Galicia
+					leon_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					galicia_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					asturias_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			
+			}
+		}
+	}
+
+
+}
+
+raf_hispania_2 = {
+    slot = 2                 # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.  
+	
+	potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	
+	recover_lusitania = { #Into Baetica!
+		icon = mission_reclaim_andalucia
+		position = 5 #To make it work.
+		required_missions = { recover_west_mauretania recover_baetica }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = extremadura_area
+				area = beieras_area
+				area = alentejo_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			extremadura_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			beieras_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			alentejo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			custom_tooltip = galicia_claims_tier_2
+			if = {
+				limit = {
+					mission_completed = recover_tarraconensis
+				}
+				hidden_effect = { #Galicia
+					leon_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					galicia_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					asturias_area = {
+						limit = {
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { is_core = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			
+			}
+		}
+	}
+	
+	recover_galicia = { #Finalize Iberian Conquests with Galicia!
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { recover_lusitania recover_tarraconensis }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = galicia_area
+				area = asturias_area
+				area = leon_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			galicia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			leon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			asturias_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			341 = {
+				add_base_tax = 2
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+
+
+}
+
+
+raf_gallia = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+	has_country_shield = yes
+	
+	recover_narbonia = { #Get Narbonia
+		icon = centralize_france
+		position = 8
+		required_missions = { recover_gallia_cisalpina recover_tarraconensis }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = savoy_dauphine_area
+				area = languedoc_area
+				area = provence_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			savoy_dauphine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			languedoc_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			provence_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "bellum_gallicum"
+				duration = -1
+			}
+			
+			#Claims
+			custom_tooltip = aquitania_claims
+			hidden_effect = { #Aquitania
+				poitou_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				pyrenees_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				guyenne_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				massif_central_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_aquitania = { #Into Aquitania!
+		icon = mission_assemble_an_army
+		required_missions = { recover_narbonia }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = poitou_area
+				area = pyrenees_area
+				area = guyenne_area
+				area = massif_central_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			poitou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			pyrenees_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			guyenne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			massif_central_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			
+			#Claims
+			custom_tooltip = lugdunensis_claims
+			hidden_effect = { #Lougdonia
+				orleans_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				loire_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				ile_de_france_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				bourgogne_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				normandy_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				brittany_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				west_burgundy_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				lorraine_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				picardy_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				champagne_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	retake_lugdunensis = { #Revenge for Syagrius!
+		icon = mission_syagrius
+		required_missions = { recover_aquitania }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = brittany_area
+				area = normandy_area
+				area = bourgogne_area
+				area = ile_de_france_area
+				area = orleans_area
+				area = loire_area
+				area = lorraine_area
+				area = west_burgundy_area
+				area = champagne_area
+				area = picardy_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			brittany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			normandy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			bourgogne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			ile_de_france_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			orleans_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			loire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			lorraine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			west_burgundy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			champagne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			picardy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			
+			#Claims
+			custom_tooltip = belgica_claims
+			hidden_effect = { #Belgica
+				flanders_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				wallonia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = britannia_claims
+			hidden_effect = { #Albion
+				wales_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				yorkshire_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				home_counties_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				east_anglia_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				wessex_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				northern_england_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				west_midlands_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				east_midlands_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	into_belgica = { #Get the lands of Belgica!
+		icon = mission_establish_high_seas_navy
+		required_missions = { retake_lugdunensis }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = wallonia_area
+				area = flanders_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			wallonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			flanders_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			#Claims
+			custom_tooltip = germania_minor_claims
+			hidden_effect = { #Rhenus border
+				brabant_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				north_brabant_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				alsace_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				romandie_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				switzerland_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				lower_rhineland_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				north_rhine_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				palatinate_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	recover_germania_minor = { #Finish off the Rhenus Border!
+		icon = mission_assemble_an_army
+		required_missions = { into_belgica }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = brabant_area
+				area = north_brabant_area
+				area = alsace_area
+				area = switzerland_area
+				area = romandie_area
+				area = lower_rhineland_area
+				area = north_rhine_area
+				area = palatinate_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			brabant_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			north_brabant_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			alsace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			switzerland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			romandie_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			lower_rhineland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			north_rhine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			palatinate_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "like_gaius_the_bold"
+				duration = -1
+			}
+			
+			capital_scope = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+		}
+	}
+	
+	vernichtung_des_falschen_kaisars = {
+		icon = mission_augustus_et_barbari
+		required_missions = { recover_germania_minor }
+		#Copied from Recover Greece vanilla.
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		
+		provinces_to_highlight = {}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = vernichtung_des_falschen_kaisars_tooltip
+				NOT = { hre_size = 1 }
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_country_modifier = {
+				name = "der_echte_kaisar"
+				duration = -1
+			}
+			add_legitimacy = 25
+		}
+	}
+
+}
+
+raf_britannia = {
+    slot = 2                 # Which column the missions will appear in. 1 to 5.
+    generic = no            	# Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+        tag = RAF
+		NOT = { map_setup = map_setup_random }
+    }
+    
+    # The name of the mission, used for localization
+    rule_britannia = {
+		icon = mission_early_game_buildings
+		position = 11
+		required_missions = { retake_lugdunensis  }
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = east_midlands_area
+				area = northern_england_area
+				area = wales_area
+				area = wessex_area
+				area = east_anglia_area
+				area = west_midlands_area
+				area = home_counties_area
+				area = yorkshire_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			northern_england_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "like_tiberius_the_lame"
+				duration = -1
+			}
+			
+			236 = {
+				add_base_tax = 2
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+		
+	}
+}
+
