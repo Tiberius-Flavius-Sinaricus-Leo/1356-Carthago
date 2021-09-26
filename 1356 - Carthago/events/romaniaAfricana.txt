@@ -1,0 +1,445 @@
+namespace = raf
+
+#Like Vandals.
+country_event = {
+	id = raf.1
+	title = "raf.1.t"
+	desc = "raf.1.d"
+	picture = like_vandals_pic
+	
+	fire_only_once = yes
+
+	trigger = {
+		tunisia_area = {
+			type = all
+			owned_by = ROOT
+		}
+		djerba_area = {
+			type = all
+			owned_by = ROOT
+		}
+		sicily_area = {
+			type = all
+			owned_by = ROOT
+		}
+		western_sicily_area = {
+			type = all
+			owned_by = ROOT
+		}
+		corsica_sardinia_area = {
+			type = all
+			owned_by = ROOT
+		}
+		baleares_area = {
+			type = all
+			owned_by = ROOT
+		}
+		kabylia_area = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+
+	option = {
+		name = "raf.1.a"
+		add_country_modifier = {
+			name = "like_vandals"
+			duration = -1
+		}
+	}
+}
+
+#Roma restored
+country_event = {
+	id = raf.2
+	
+	title = "raf.2.t"
+	desc = "raf.2.d"
+	
+	picture = roma_urbs_pic
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RAF
+		owns = 118 #Rome
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "raf.2.a"
+		add_dip_power = 50
+		add_prestige = 25
+		add_legitimacy = 10
+	}
+}
+
+#Decide your diplomatic relation with ERE
+#country_event = {
+#	id = raf.3
+#	
+#	title = "raf.3.t"
+#	desc = "raf.3.d"
+#	
+#	picture = BYZANTINE_EAGLE_eventPicture
+#	
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		tag = RAF
+#		ai = no
+#		NOT = { is_rival = BYZ }
+#		exists = TUR
+#		BYZ = {
+#			NOT = { alliance_with = RAF }
+#			NOT = { num_of_cities = 10 }
+#			core_claim = TUR
+#		}
+#		TUR = {
+#			is_great_power = yes
+#		}
+#	}
+#	
+#	mean_time_to_happen = {
+#		days = 5
+#	}
+#	
+#	#Offer Help.
+#	option = {
+#		name = "raf.3.a"
+#		BYZ = {
+#			country_event = {
+#				id = raf.4
+#				days = 5
+#			}
+#		}
+#	}
+#	
+#	#Leave them die in peace.
+#	option = {
+#		name = "raf.3.b"
+#		trigger = {
+#			BYZ = {
+#				NOT = { religion_group = ROOT }
+#			}
+#		}
+#	}
+#}
+
+#country_event = {
+#	id = raf.4
+#	
+#	title = "raf.4.t"
+#	desc = "raf.4.d"
+#	
+#	picture = BYZANTINE_EAGLE_eventPicture
+#	
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	#Akzeptieren
+#	option = {
+#		name = "raf.4.a"
+#		ai_chance = { 
+#			factor = 80 
+#			modifier = {
+#				factor = 1.25
+#				OR = {
+#					AND = {
+#						TUR = {
+#							is_great_power = yes
+#						}
+#						core_claim = TUR
+#					}
+#					NOT = { num_of_cities = 13 }
+#				}
+#			}
+#			modifier = {
+#				factor = 0
+#				AND = {
+#					is_great_power = yes
+#					OR = {
+#						FROM = {
+#							NOT = { religion_group = christian }
+#						}
+#						NOT = { has_opinion = { who = FROM value = 20 } }
+#						is_rival = FROM
+#					}
+#				}
+#			}
+#		}
+#		if = {
+#			limit = {
+#				is_rival = FROM
+#			}
+#			remove_rival = FROM
+#		}
+#		create_alliance = FROM
+#		add_opinion = {
+#			who = FROM
+#			modifier = our_dear_roman_siblings
+#		}
+#		FROM = {
+#			country_event = {
+#				id = raf.5
+#				days = 5
+#			}
+#		}
+#	}
+#	
+#	#Ablehnen
+#	option = {
+#		name = "raf.4.b"
+#		ai_chance = { 
+#			factor = 20
+#			modifier = {
+#				factor = 0
+#				OR = {
+#					AND = {
+#						TUR = {
+#							is_great_power = yes
+#						}
+#						core_claim = TUR
+#					}
+#					NOT = { num_of_cities = 13 }
+#				}
+#			}
+#			modifier = {
+#				factor = 5
+#				AND = {
+#					is_great_power = yes
+#					OR = {
+#						FROM = {
+#							NOT = { religion_group = christian }
+#						}
+#						NOT = { has_opinion = { who = FROM value = 20 } }
+#						is_rival = FROM
+#					}
+#				}
+#			}
+#		}
+#		FROM = {
+#			country_event = {
+#				id = raf.6
+#				days = 5
+#			}
+#		}
+#	}
+#}
+
+#country_event = {
+#	id = raf.5
+#	
+#	title = "raf.5.t"
+#	desc = "raf.5.d"
+#	
+#	picture = BYZANTINE_EAGLE_eventPicture
+#	
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = "raf.5.a"
+#		add_prestige = 50
+#	}
+#}
+
+#country_event = {
+#	id = raf.6
+#	
+#	title = "raf.6.t"
+#	desc = "raf.6.d"
+#	
+#	picture = COMET_SIGHTED_eventPicture
+#	
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = "raf.6.a"
+#		add_prestige = -25
+#	}
+#}
+
+#Cirta reclaimed
+country_event = {
+	id = raf.7
+	
+	title = "raf.7.t"
+	desc = "raf.7.d"
+	
+	picture = SIEGE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RAF
+		owns = 340 #Cirta
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "raf.7.a"
+		add_dip_power = 50
+		add_prestige = 25
+	}
+}
+
+#Tripolitania reclaimed
+country_event = {
+	id = raf.8
+	
+	title = "raf.8.t"
+	desc = "raf.8.d"
+	
+	picture = SIEGE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RAF
+		owns = 354 #Tripolitania
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "raf.8.a"
+		add_dip_power = 50
+		add_prestige = 25
+	}
+}
+
+#Italia restored
+country_event = {
+	id = raf.9
+	
+	title = "raf.9.t"
+	desc = "raf.9.d"
+	
+	picture = roma_urbs_pic
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RAF
+		italy_region = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "raf.9.a"
+		add_dip_power = 50
+		add_prestige = 25
+		add_legitimacy = 10
+	}
+}
+
+#Move the capital or not
+country_event = {
+	id = raf.10
+	
+	title = "raf.10.t"
+	desc = "raf.10.d"
+	
+	picture = roma_urbs_pic
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RAF
+		is_core = 118
+		owns = 118
+		capital = 341
+		118 = {
+			culture_group = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = "raf.10.a"
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 2
+				118 = {
+					development = 30
+				}
+			}
+			modifier = {
+				factor = 0.5
+				341 = {
+					development = 30
+				}
+			}
+			modifier = {
+				factor = 0
+				341 = {
+					development = 60
+				}
+			}
+		}
+		add_legitimacy = 10
+		add_prestige = 25
+		set_capital = 118
+	}
+	
+	option = {
+		name = "raf.10.b"
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0.5
+				118 = {
+					development = 30
+				}
+			}
+			modifier = {
+				factor = 2
+				341 = {
+					development = 30
+				}
+			}
+			modifier = {
+				factor = 2
+				341 = {
+					development = 60
+				}
+			}
+		}
+		341 = {
+			add_province_modifier = { 
+				name = "roma_tertia"
+				duration = -1
+			}
+			rename_capital = "Roma Carthaginensis"
+		}
+	}
+}

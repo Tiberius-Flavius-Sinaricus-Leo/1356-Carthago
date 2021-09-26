@@ -1,0 +1,145 @@
+namespace = estate_senatores
+
+# Senators takes control
+country_event = {
+	id = estate_senatores.1
+	title = estate_senatores.1.t
+	desc = estate_senatores.1.d
+	picture = X
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = senatores_estate_in_power
+	}
+	
+	option = {
+		name = estate_senatores.1.a	
+		add_stability = -1
+		custom_tooltip = estate_senatores.1.a.tt
+	}
+}
+
+# Senators brought to heel
+country_event = {
+	id = estate_senatores.2
+	title = estate_senatores.2.t
+	desc = estate_senatores.2.d
+	picture = X
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = estate_senatores.2.a
+	}
+}
+
+# Corrupt Governor
+country_event = {
+	id = estate_senatores.3
+	title = estate_senatores.3.t
+	desc = estate_senatores.3.d
+	picture = OPRICHINA_eventPicture
+
+	trigger = {
+		any_owned_province = {
+			is_state = yes
+		}
+		has_estate = estate_senatores
+		has_reform = senatorial_cabinet_reform
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_senatores
+				modifier = EST_VAL_TOLERATED_CORRUPTION
+			}
+		}
+		NOT = {
+			has_estate_loyalty_modifier = {
+				estate = estate_senatores
+				modifier = EST_VAL_TOLERATED_CORRUPTION_LOY
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_senatores
+				modifier = EST_VAL_INTOLERATED_CORRUPTION
+			}
+		}
+		NOT = {
+			has_estate_loyalty_modifier = {
+				estate = estate_senatores
+				modifier = EST_VAL_INTOLERATED_CORRUPTION_LOY
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { is_state = yes }
+				save_event_target_as = corrupt_governor
+			}
+		}
+	}
+
+	option = { #
+		name = estate_senatores.3.a #
+		ai_chance = {
+			factor = 20
+		}
+		add_estate_influence_modifier = {
+			estate = estate_senatores
+			desc = EST_VAL_INTOLERATED_CORRUPTION
+			influence = -10
+			duration = 5475
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_senatores
+			desc = EST_VAL_INTOLERATED_CORRUPTION_LOY
+			loyalty = -10
+			duration = 5475
+		}
+		event_target:corrupt_governor = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_province_modifier = {
+					name = "corrupt_governor_modifier"
+					duration = 3650
+				}
+			}
+		}
+	}
+	option = { 
+		name = estate_senatores.3.b #
+		ai_chance = {
+			factor = 80
+		}
+		add_estate_influence_modifier = {
+			estate = estate_senatores
+			desc = EST_VAL_TOLERATED_CORRUPTION
+			influence = 10
+			duration = 5475
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_senatores
+			desc = EST_VAL_TOLERATED_CORRUPTION_LOY
+			loyalty = 10
+			duration = 5475
+		}
+		add_corruption = 0.25
+		event_target:corrupt_governor = {
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 1
+			}
+		}
+	}
+}

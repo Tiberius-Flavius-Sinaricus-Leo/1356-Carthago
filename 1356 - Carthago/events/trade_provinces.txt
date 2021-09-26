@@ -1,0 +1,367 @@
+namespace = trade_provinces
+
+country_event = {
+	id = trade_provinces.1
+	title = "trade_provinces.1.t"
+	desc = "trade_provinces.1.d"
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+		ai = no
+		NOT = {
+			has_country_flag = tp_time_out
+		}
+		any_ally = {
+			any_owned_province = {
+				AND = {
+					is_claim = ROOT
+					NOT = { has_construction = core }
+				}
+			}
+		}
+		is_at_war = no
+		is_bankrupt = no
+	}
+	
+	immediate = {
+		random_ally = {
+			limit = {
+				any_owned_province = { is_claim = ROOT }
+			}
+			save_event_target_as = ally_pointer
+			random_owned_province = {
+				limit = {
+					is_claim = ROOT
+					NOT = { has_construction = core }
+				}
+				save_event_target_as = province_pointer
+			}
+		}
+	}
+	
+	after = {
+		set_country_flag = tp_time_out
+	}
+	
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			factor = 0.5
+			treasury = 10000
+		}
+	}
+	
+	#Send the Proposal
+	option = {
+		name = "trade_provinces.1.a"
+		event_target:ally_pointer = {
+			country_event = {
+				id = trade_provinces.2
+				days = 5
+			}
+		}
+	}
+	
+	#Not Now
+	option = {
+		name = "trade_provinces.1.b"
+	}
+}
+
+country_event = {
+	id = trade_provinces.2
+	title = "trade_provinces.2.t"
+	desc = "trade_provinces.2.d"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		ROOT = { capital_scope = { save_event_target_as = caput } }
+	}
+	
+	#Agree to sell the Province
+	option = {
+		name = "trade_provinces.2.a"
+		ai_chance = { 
+			factor = 30 
+			modifier = {
+				factor = 0
+				NOT = { 
+					has_opinion = {
+						who = FROM
+						value = 90
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				event_target:province_pointer = { is_capital_of = ROOT }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 2.5
+				event_target:province_pointer = {
+					province_distance = {
+						who = event_target:caput
+						distance = 50
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				is_bankrupt = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = trade_provinces.3
+				days = 5
+			}
+		}
+	}
+	
+	#Rejection
+	option = {
+		name = "trade_provinces.2.b"
+		ai_chance = { 
+			factor = 40 
+			modifier = {
+				factor = 0
+				is_bankrupt = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 0.75
+				event_target:province_pointer = {
+					province_distance = {
+						who = event_target:caput
+						distance = 50
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				event_target:province_pointer = { is_capital_of = ROOT }
+			}
+			modifier = {
+				factor = 10
+				NOT = { 
+					has_opinion = {
+						who = FROM
+						value = 90
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = trade_provinces.4
+				days = 5
+			}
+		}
+	}
+	
+	#Pay Money to ask them stop claim this Province
+	option = {
+		name = "trade_provinces.2.c"
+		ai_chance = { 
+			factor = 30
+			modifier = {
+				factor = 0
+				is_bankrupt = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = trade_provinces.5
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = trade_provinces.3
+	title = "trade_provinces.3.t"
+	desc = "trade_provinces.3.d"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			event_target:province_pointer = {
+				export_to_variable = { which = valueOfProv_tax value = base_tax }
+				export_to_variable = { which = valueOfProv_prod value = base_production }
+				export_to_variable = { which = valueOfProv_man value = base_manpower }
+				export_to_variable = {
+					which = moneyAvailable
+					value = treasury
+					who = ROOT
+				}
+				set_variable = {            
+					which = sumValue
+					which = valueOfProv_tax
+				}
+				change_variable = {            
+					which = sumValue
+					which = valueOfProv_prod
+				}
+				change_variable = {            
+					which = sumValue
+					which = valueOfProv_man
+				}
+				multiply_variable = {            
+					which = sumValue
+					value = 100
+				}
+			}
+		}
+	}
+	
+	
+	#Make the Deal
+	option = {
+		name = "trade_provinces.3.a"
+		trigger = {
+			check_variable = {
+				which = sumValue
+				which = moneyAvailable
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { check_variable = { which = sumValue value = 1000 } }
+			}
+			add_treasury = -300
+			event_target:ally_pointer = { add_treasury = 300 }
+		}
+		else_if = {
+			limit = { 
+				check_variable = { which = sumValue value = 1000 }
+				NOT = { check_variable = { which = sumValue value = 5000 } }
+			}
+			add_treasury = -1000
+			event_target:ally_pointer = { add_treasury = 1000 }
+		}
+		else_if = {
+			limit = { 
+				check_variable = { which = sumValue value = 5000 }
+				NOT = { check_variable = { which = sumValue value = 7500 } }
+			}
+			add_treasury = -5000
+			event_target:ally_pointer = { add_treasury = 5000 }
+		}
+		else_if = {
+			limit = { 
+				check_variable = { which = sumValue value = 7500 }
+				NOT = { check_variable = { which = sumValue value = 10000 } }
+			}
+			add_treasury = -7500
+			event_target:ally_pointer = { add_treasury = 7500 }
+		}
+		else = {
+			add_treasury = -10000
+			event_target:ally_pointer = { add_treasury = 10000 }
+		}
+		event_target:province_pointer = {
+			cede_province = ROOT
+			if = {
+				limit = { is_core = FROM }
+				remove_core = FROM
+			}
+			#When the owner hasn't start the core construction yet.
+			else_if = {
+				limit = { is_claim = FROM }
+				remove_claim = FROM
+			}
+		}
+	}
+	
+	#Wait a SEC...
+	option = {
+		name = "trade_provinces.3.b"
+	}
+}
+
+country_event = {
+	id = trade_provinces.4
+	title = "trade_provinces.4.t"
+	desc = "trade_provinces.4.d"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+	
+	#They say no...
+	option = {
+		name = "trade_provinces.4.a"
+	}
+}
+
+country_event = {
+	id = trade_provinces.5
+	title = "trade_provinces.5.t"
+	desc = "trade_provinces.5.d"
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	
+	#Fine...
+	option = {
+		name = "trade_provinces.5.a"
+		event_target:province_pointer = {
+			remove_claim = ROOT
+		}
+		add_treasury = 2500
+		event_target:ally_pointer = {
+			add_treasury = -2500
+		}
+	}
+	
+	#No...
+	option = {
+		name = "trade_provinces.5.b"
+	}
+}
+
+#Events to remove the time out flag
+country_event = {
+	id = trade_provinces.6
+	title = none
+	desc = none
+	picture = none
+	
+	trigger = {
+		has_country_flag = tp_time_out
+	}
+	
+	mean_time_to_happen = {
+		days = 7600
+	}
+	
+	hidden = yes
+	
+	immediate = {
+		clr_country_flag = tp_time_out
+	}
+	
+	option = { }
+}

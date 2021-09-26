@@ -1,0 +1,488 @@
+namespace = utriusqueromae
+
+country_event = {
+	id = utriusqueromae.1
+	title = none
+	desc = none
+	picture = none
+	
+	trigger = {
+		OR = {
+			tag = RAF
+			tag = WRE
+		}
+		mission_completed = raf_byzantine_question
+		exists = BYZ
+		BYZ = {
+			NOR ={
+				alliance_with = ROOT
+				is_subject_of = ROOT
+			}
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = opinion_roman_alliance
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	hidden = yes
+	
+	immediate = {
+		BYZ = {
+			remove_opinion = {
+				who = ROOT
+				modifier = opinion_roman_alliance
+			}
+		}
+		#Feel free to sack Constantinople...
+		thrace_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+	
+	option = { }
+}
+
+country_event = {
+	id = utriusqueromae.2
+	title = none
+	desc = none
+	picture = none
+	
+	trigger = {
+		OR = {
+			tag = RAF
+			tag = WRE
+		}
+		mission_completed = raf_byzantine_question
+		exists = BYZ
+		BYZ = {
+			OR ={
+				alliance_with = ROOT
+				is_subject_of = ROOT
+			}
+			NOT = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = opinion_roman_alliance
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	hidden = yes
+	
+	immediate = {
+		BYZ = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_roman_alliance
+			}
+		}
+		thrace_area = {
+			limit = {
+				is_permanent_claim = ROOT
+			}
+			remove_claim = ROOT
+		}
+	}
+	
+	option = { }
+}
+
+#Become Roman 'Emperor'"
+country_event = {
+	id = utriusqueromae.3
+	title = "utriusqueromae.3.t"
+	desc = "utriusqueromae.3.d"
+	picture = augustus_pic
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RAF
+		total_development = 1000
+		government_rank = 2
+		government = monarchy
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	#Ave Imperator!
+	option = {
+		name = "utriusqueromae.3.a"
+		if = {
+			limit = { NOT = { government_rank = 3 } }
+			set_government_rank = 3
+		}
+		if = {
+			limit = { exists = BYZ }
+			BYZ = {
+				country_event = {
+					id = utriusqueromae.7
+					days = 5
+				}
+			}
+		}
+	}
+	
+	#Send envoy to Constantinopolis!
+	option = {
+		name = "utriusqueromae.3.b"
+		trigger = {
+			alliance_with = BYZ
+		}
+		BYZ = {
+			country_event = {
+				id = utriusqueromae.4
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = utriusqueromae.4
+	title = "utriusqueromae.4.t"
+	desc = "utriusqueromae.4.d"
+	picture = carthago_urbs_pic
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "utriusqueromae.4.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					legitimacy = 80
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					OR = {
+						primary_culture = greek
+						culture_group = roman_group
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				AND = {
+					is_great_power = no
+					FROM = {
+						is_great_power = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { 
+					has_opinion = {
+						who = FROM
+						value = 90
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = utriusqueromae.5
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = "utriusqueromae.4.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 0.75
+				FROM = {
+					legitimacy = 80
+				}
+			}
+			modifier = {
+				factor = 0.25
+				FROM = {
+					OR = {
+						primary_culture = greek
+						culture_group = roman_group
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					is_great_power = no
+					FROM = {
+						is_great_power = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				NOT = { 
+					has_opinion = {
+						who = FROM
+						value = 90
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = utriusqueromae.6
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = utriusqueromae.5
+	title = "utriusqueromae.5.t"
+	desc = "utriusqueromae.5.d"
+	picture = augustus_pic
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		
+		if = {
+			limit = { NOT = { government_rank = 3 } }
+			set_government_rank = 3
+		}
+	}
+	
+	option = {
+		name = "utriusqueromae.5.a"
+		add_legitimacy = 50
+		add_prestige = 50
+	}
+}
+
+country_event = {
+	id = utriusqueromae.6
+	title = "utriusqueromae.6.t"
+	desc = "utriusqueromae.6.d"
+	picture = BYZANTINE_EMPEROR_eventPicture
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	#Damn!
+	option = {
+		name = "utriusqueromae.6.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				is_great_power = yes
+			}
+		}
+		add_legitimacy = -25
+		add_prestige = -25
+		add_opinion = {
+			who = FROM
+			modifier = recognition_rejected
+		}
+	}
+	
+	#We don't need those Greeks' recognition then!
+	option = {
+		name = "utriusqueromae.6.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				is_great_power = yes
+			}
+		}
+		add_legitimacy = -10
+		add_prestige = -10
+		if = {
+			limit = { NOT = { government_rank = 3 } }
+			set_government_rank = 3
+		}
+		BYZ = {
+			add_opinion = {
+				who = ROOT
+				modifier = illegitimate_emperor
+			}
+		}
+	}
+}
+
+country_event = {
+	id = utriusqueromae.7
+	title = "utriusqueromae.7.t"
+	desc = "utriusqueromae.7.d"
+	picture = carthago_urbs_pic
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Send Congratulations, passively...
+	option = {
+		name = "utriusqueromae.7.a"
+		trigger = {
+			is_subject_of = FROM
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 4
+				is_subject_of = FROM
+			}
+			modifier = {
+				factor = 2
+				FROM = { is_great_power = yes }
+			}
+			modifier = {
+				factor = 0.5
+				is_great_power = yes
+			}
+		}
+		legitimacy = -10
+		prestige = -10
+		FROM = {
+			country_event = {
+				id = utriusqueromae.5
+				days = 5
+			}
+		}
+	}
+	#Let's see what's gonna happen
+	option = {
+		name = "utriusqueromae.7.b"
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0.75
+				is_subject_of = FROM
+			}
+			modifier = {
+				factor = 0.5
+				is_great_power = yes
+			}
+			modifier = {
+				factor = 2.5
+				AND = {
+					NOT = { alliance_with = FROM }
+					FROM = { is_great_power = yes }
+					is_great_power = no
+				}
+			}
+			legitimacy = -5
+			prestige = -5
+		}
+	}
+	#Another Monkey under the Purple Mantle...
+	option = {
+		name = "utriusqueromae.7.c"
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				is_subject_of = FROM
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					is_great_power = yes
+					ruler_has_personality = naive_personality
+				}
+			}
+			modifier = {
+				factor = 0.75
+				OR = {
+					FROM = { is_great_power = yes }
+					ruler_has_personality = craven_personality
+				}
+			}
+			modifier = {
+				factor = 0.25
+				AND = {
+					NOT = { alliance_with = FROM }
+					FROM = { is_great_power = yes }
+					is_great_power = no
+				}
+			}
+		}
+		prestige = 5
+		FROM = {
+			country_event = {
+				id = utriusqueromae.8
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = utriusqueromae.8
+	title = "utriusqueromae.8.t"
+	desc = "utriusqueromae.8.d"
+	picture = BYZANTINE_EMPEROR_eventPicture
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	option = {
+		name = "utriusqueromae.8.a"
+		add_legitimacy = -25
+		add_prestige = -25
+		add_opinion = {
+			who = FROM
+			modifier = scornfully_insulted
+		}
+		add_casus_belli = {
+			target = FROM
+			type = cb_insult
+			months = 60
+		}
+	}
+}

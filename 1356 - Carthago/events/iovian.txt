@@ -1,0 +1,142 @@
+########################################
+# Iovian Deity Events
+#
+# written by Jan (originally)
+########################################
+
+namespace = iovian
+
+# Pontifex Maximus
+country_event = {
+	id = iovian.1
+	title = "iovian.1.t"
+	desc = "iovian.1.d"
+	picture = pontifex_pic
+	
+	is_triggered_only = yes
+	immediate = {
+		custom_tooltip = pontifex_maximus_tt
+		add_ruler_modifier = {
+			name = pontifex_maximus_election
+			hidden = yes
+		}
+	}
+	
+	option = {
+		name = "iovian.1.a"
+		add_prestige = 5
+		add_dip_power = 25
+		add_years_of_income = -0.6
+		add_ruler_modifier = {
+			name = pontifex_maximus
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "iovian.1.b"
+		add_years_of_income = -0.3
+		add_ruler_modifier = {
+			name = pontifex_maximus
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "iovian.1.c"
+		add_prestige = -5
+		add_ruler_modifier = {
+			name = pontifex_maximus
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = iovian.2
+	title = "iovian.2.t"
+	desc = "iovian.2.d"
+	picture = PRAYING_eventPicture
+
+	trigger = {
+		religion = roman_polytheism
+		has_dlc = "Wealth of Nations"
+		has_regency = no
+		OR = {
+			has_country_flag = iovian_deity_interaction
+			AND = {
+				NOT = { has_personal_deity = iuppiter }
+				NOT = { has_personal_deity = iuno }
+				NOT = { has_personal_deity = minerva }
+				NOT = { has_personal_deity = mars }
+				NOT = { has_personal_deity = quirinus }
+				NOT = { has_personal_deity = vulcanus }
+				NOT = { has_personal_deity = neptunus }
+				NOT = { has_personal_deity = pluto }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	# Diespiter
+	option = {
+		name = "iovian.2.a"
+		change_personal_deity = iuppiter
+	}
+
+	# Iuno
+	option = {
+		name = "iovian.2.b"
+		change_personal_deity = iuno
+	}
+
+	# Minerva
+	option = {
+		name = "iovian.2.c"
+		change_personal_deity = minerva
+	}
+
+	# Mars
+	option = {
+		name = "iovian.2.e"
+		change_personal_deity = mars
+	}
+
+	# Romulus
+	option = {
+		name = "iovian.2.f"
+		trigger = {
+			culture_group = roman_group
+		}
+		change_personal_deity = quirinus
+	}
+
+	# Vulcanus
+	option = {
+		name = "iovian.2.g"
+		change_personal_deity = vulcanus
+	}
+	
+	# Neptunus
+	option = {
+		name = "iovian.2.h"
+		change_personal_deity = neptunus
+	}
+	
+	# Pluto
+	option = {
+		name = "iovian.2.i"
+		change_personal_deity = pluto
+	}
+
+	# Nicht bereit.
+	option = {
+		trigger = {
+			NOT = { has_country_flag = iovian_deity_interaction }
+		}
+		name = "iovian.2.j"
+	}
+}
