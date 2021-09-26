@@ -1,0 +1,2 @@
+RAF	= "countries/RomaniaAfricana.txt"
+WRE	= "countries/WesternRomanEmpire.txt"

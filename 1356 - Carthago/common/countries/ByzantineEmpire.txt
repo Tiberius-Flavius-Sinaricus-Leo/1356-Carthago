@@ -1,0 +1,227 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 102 2 60 }
+
+revolutionary_colors = { 2 3 2 } #purple \o/
+
+historical_idea_groups = {
+	quantity_ideas
+	religious_ideas
+	defensive_ideas
+	administrative_ideas
+	trade_ideas
+	quality_ideas
+	innovativeness_ideas
+	diplomatic_ideas
+}
+
+historical_units = {
+	eastern_medieval_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	ottoman_spahi
+	ottoman_sekban
+	ottoman_reformed_spahi
+	ottoman_reformed_janissary
+	ottoman_toprakli_hit_and_run
+	ottoman_nizami_cedid
+	ottoman_toprakli_dragoon
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	ottoman_new_model
+	ottoman_lancer
+}
+
+monarch_names = {
+	"Ioannes #7" = 40
+	"Alexios #5" = 30
+	"Konstantinos #10" = 20
+	"Andronikos #4" = 10
+	"Manouel #2" = 20
+	"Rhomanos #4" = 20
+	"Demetrios #0" = 15
+	"Theodoros #2" = 15
+	"Mikhael #8" = 10
+	"Andreas #0" = 10
+	"Helene #0" = -10
+	"Thomas #0" = 10
+	"Isaakios #2" = 10
+	"Basileios #2" = 20
+	"Leon #6" = 20
+	"Adrianos #1" = 5
+	"Anastasios #2" = 5
+	"Herakleios #1" = 5
+	"Ioulianos #3" = 5
+	"Ioustinianos #2"= 5
+	"Ioustinos #2" = 5
+	"Konstantios #3" = 5
+	"Markos #1" = 5
+	"Nikephoros #3" = 5
+	"Theophilos #1" = 5
+	"Theodosios #3" = 5
+	"Tiberios #3" = 5
+	"Traianos #1" = 5
+	"Alexandros #1" = 5
+	"Philippos #2" = 5
+	"Athanasios #0" = 1
+	"Antonios #0" = 1
+	"Bartholomaios #0" = 1
+	"Khristophoros #0" = 1
+	"Diogenes #0" = 1
+	"Dionysios #0" = 1
+	"Eirenaios #0" = 1
+	"Elpidios #0" = 1
+	"Georgios #0" = 1
+	"Gregorios #0" = 1
+	"Hektorios #0" = 1
+	"Iason #0" = 1
+	"Kyrillos #0" = 1
+	"Matthaios #0" = 1
+	"Niketas #0" = 1
+	"Nikolaos #0" = 1
+	"Nikodemos #0" = 1
+	"Sergios #0" = 1
+	"Porphyrios #0" = 1
+	"Paulos #0" = 1
+	"Panagiotis #0" = 1
+	"Petros #0" = 1
+	"Philemon #0" = 1
+	"Prokopios #0" = 1
+	"Stephanos #0" = 1
+	#Byz Resurgence added
+	"Konstas #2" = 5
+	"Basiliskos #1" = 1
+	"Oualentinianos #3" = 1
+	"Ouales #1" = 1
+	"Oualentinos #1" = 1
+	
+	#Byz Resurgence adjusted rates of vanilla names due to the sheer amount of extra names so that they still remain common
+	"Eirene #1" = -30
+	"Theodora #1" = -30
+	"Zoe #1" = -20
+	#Byz Resurgence added - List mostly taken from byzantine emperors' wives & daughters
+	"Eudokia #0" = -10
+	"Sophia #0" = -10
+	"Konstantina #0" = -5
+	"Anastasia #0" = -5
+	"Anna #0" = -5
+	"Maria #0" = -5
+	"Elene #0" = -5
+	"Prokopia #0" = -5
+	"Thekla #0" = -1 
+	"Phausta #0" = -1
+	"Martina #0" = -1
+	"Leontia #0" = -1
+	"Ino #0" = -1
+	"Dominika #0" = -1
+	"Phlakkilla #0" = -1
+	"Eudoxia #0" = -2 #I actually want to know, since this is a Latin name (Pre-Justinian, last latin emperor), whether X is pronounced like latin X [ch] or like Greek X [ksi]
+	"Pulkheria #0" = -1
+	"Plakidia #0" = -1
+	"Onoria #0" = -1
+	"Zenonis #0" = -1
+	"Augoustina #0" = -1
+	"Aikaterine #0" = -1
+	"Ariadne #0" = -1
+	"Euphemia #0" = -1
+	"Gregoria #0" = -1
+	"Theodote #0" = -1
+	"Theophano #0" = -1
+	"Euphrosyne #0" = -2
+}
+
+leader_names = { 
+	Akropolites Angelos Aoinos Apokaukos Argyros
+	Basileous Batatzes Botaneiates Boumbalis
+	Khoniates Khoumnos
+	Diasorenos Diogenes Doukas
+	Gabras
+	Iagaros
+	Kantakouzenos Kaukadenos Komnenos
+	Laskaris
+	Melissinos Melisourgos Mikroulakes Monomakhos Mouzalon
+	Nestongos
+	Palaiologos Paraspondylos Phokas Phouskarnakes Phrangopoulos Psellos
+	Rhadinos Rhangabe Rhodokanakes
+	Syropoulos
+	Tornikes
+	Zarides Tzimiskes
+}
+
+ship_names = {
+	#Vanilla replaced by ship names in Renovatio Imperii. I claim no rights or responsibility to any of these names. //Dub
+	Hydra Lesbos Limnos Mikonos Salamis Samos Themistoklis Euripidis Aiskhylos Aristophanis Arkhimedes Demokritos Anaxagoras Diomedes Herakles Atreas Perseas Aigyptos
+	Aiolos Poseidon Athena Zeus Dias Kronos Rea Ouranos Hera Adonis Aphrodite Kharauge Orion Iasonas Theseus Akhilleas Mermidon Makedon Lakedemon Athineos Xenophon
+	Miltiades Alexandros Megalexandros Gorgona Midia Andriantas Demetra Estia Apollon Ermis Gorgopodaros Gorgoplephstos Artemis Aris Theophanis Theokhara
+	Filippos Edessa Ionia Korinthos Sparte Athenai Messina Anthosparte Kampos Argolida Argo Hephestos Hephestion Nearkhos Parmenion Leonidas Khristos
+	Khristophoros "Agios Khristophoros" "Basileus Khristophoros" Theodora "Agia Theodora" "Agios Theodoros" "Basileus Theodoros" Aphtokrator "Basillisa Theodora"
+	Nikephoros "Agios Nikephoros" "Basileus Nikephoros" Paulos "Apostolos Paulos" "Osios Paulos" Alexios "Agios Alexios" "Agia Alexia" Alexia "Basileus Alexios"
+	"Basilissa Alexia" Konstantinos "Agios Konstantinos" "Konstantinos o Megas" "Basileus Konstantinos" "Autokrator Konstantinos" Herakleios "Agios Herakleios"
+	"Basileus Herakleios" "Agios Herakleidios" "Agios Sergios" "Agios Maximos" "Agia Eleni" Elene "Oraia Eleni" "Basilissa Eleni"
+	"Aphtokrateira Eleni" "Konstantinos kai Elene" Stephanos "Agios Stephanos" "Agia Stephania" "Basileus Stephanos" "Autokrator Stephanos" "Arkhangellos Mikhael"
+	"Arkhangellos Gabriel" "Arkhangellos Uriel" Arkhangellos Angelos Exangelos Exapterygon Kherubim Seraphim Osios Osia Ostia Ioustiniane "Agios Ioustinianos"
+	"Agia Ioustiniani" "Aphtokrator Ioustinianos" "Basileus Ioustinianos" "Ioustinianos o Megas" "Basileus Mikhael" Andronikos Andronike "Agios Andronikos"
+	"Agia Androniki" "Basileus Andronikos" Basileios Basileia "Agios Basileios" "Agia Basileia" "Basileus Basileios" "Basileios o Boulgaroktonos" Zoe "Agia Zoe"
+	"Iera Zoe" "Basilissa Zoe" Belissarios Pire Reis Aetos "Dikephalos Aetos" "Dikephalos tou Borra" Tryphille Olympios Delphine Delphina Apokhis Nemesis Hybris
+	Drakon Lykourgos Solon Kroisos Lysippos Phedias Ades Plutonas "Mpaniera tou Poseidona" Ikaros Daidalos Ikaria Imbros Phournoi Kia Naxos Khios "Khristos Soter"
+	Soter Soterios Sozomenos Despotis "Despotis tou Moria" Peloponissos Naphplio Athos "Agion Oros" Panagia "Panagia Parthena" "Panagia Khrysorogiatissa"
+	"Panagia Pleomeni" "Panagia Dakryzousa" "Panagia Romaion" "Panagia Mitera" "Panagia Khrysospilliotisa" "Panagia Ampelokamoti" "Panagia Pigazousa"
+	"Panagia Anthousa" Hektor Menelaos Aias "Aias o Telamonios" Odysseas Ithake Tilemakhos Penelope Minoas Minotabros Tryphon Agamemnon Iphigeneia Taurida Tauros
+	Ikhthys Galaxias Astir Asteras "Erythros Asteras" "Astere tis Bithleem" "Agioi Topoi" Ierosolima Alexandreia "Doxa tou Theou" "Khara Theou" Tama Ieromartyras
+	Kyprianos Arkhiepiskopos Episkopos Doukas Ionion Aigaion Kritikon Krete Zoniana Herakleia Herakleion Khania Kypros Rodos Gigantas Polyphimos Laistrygona
+	Lamia Skylla Kharybdi Ekhidna Ophis Eua Hellespontos "Ephxeinos Pontos" Prokopios Prokopia "Agios Prokopios" Prokomenos Phrixos Elle Kerkyra Kyriarkhos Kentauros
+	Kaisar Keraunos Keratios Keraton Konstantinoupolis "Leon Skleros" Lykia Thalassolykos Megaleion "Megaleion tis Makedonias" "Mikra Asia" Morpheas Orpheas Eurydike
+	Keryneia Ammokhostos Ledra Paphos Akamas Amathous Euagoras Khalkanoras Grigorios Kyrillos Methodios Nike Okeanos Tyranos Orestis "Orge Theou" Orthodoxia Loukia
+	Loukiane "Agios Loukas" "Osios Loukas" "Prophitis Helias" "Ai Lias" Prophitis Sampson Dauid Goliath Patrida "Ellas Patrida" Patris Mitera Pateras Pater Papas Papadia
+	Diakonos Atlas Egkelados Titanas Hyperion Helios "Helios Pantokrator" Augeas Akhellos Akheros Stymphalida Lernea "Lernea Hydra" Nemea "Leon tis Nemeas" Kapros
+	Erymanthea Monastiri Nephele Gea Thalassa Mesogeios Politis Basileuousa Thalassokrator Pantheras Leon Pelargos Mermigkas Onos Thesallia Thesalloniki
+	Theophylaktos Taxiarkhos Stratilatis Oplarkhigos Nauarkhos Sikelia Ellas Samothrake Thrake Rodope Alexandroupolis Andrianoupolis Thrylos Triton Akhinos
+	Asterias Xiphias Xiphomakhos Xiphos Spatha Zakynthos Zoodotis Hypertatos Andrianos Anthimos Dragumanos Akritas Digenis "Digenis Akritas" Mauroskyllos Kharon
+	Kalymnos "Oraia Kalymnos" Psara Psaras Barrangios Gothos Mauromata Prasinomata Kastanomata Gata Gatos Magkas Phoneas Karkharias Skyllopsaro Pyrophis
+	Stauraetos Zenon Makhairas Kykkos Anthos Korax "Mauros Korax" Phouos Dimos "Theodoros Kolokotronis" "Odysseas Andrutsos" "Georgios Karaiskakis" "Rigas Pherraios"
+	"Dionysios Solomos" Dionysios Dionysos Talos Ephterpe Mpoumpoulina "Manto Maurogenous" "Konstantinos Kanaris" Nikitaras Tourkophagos Nikitas Bulgaroktonos Messologi
+	Palaiologos Komnenos "Isaakios Komnenos" Thalpore Lazaros "Apostolos Andreas" "Apostolos Barnabas" "Apostolos Loukas" "Apostolos Thomas" "Apostolos Petros"
+	"Apostolos Iakobos" "Apostolos Stephanos" "Apostolos Ioannis" "Apostolos Simonas" "Apostolos Bartholomaios" "Apostolos Thaddeos" "12 Apostoloi" "Agioi Saranta"
+	"Agioi Pantes" "Agios Nikolaos" Naphtikos "O Lebentis ton Psaron" Lebentis Tromos Rigaina Rigas Doukaina Dioskouroi Romos Romylos "Romos kai Romylos" Papandreas
+	Papamikhalis Papakonstantinos "Agios Demetrios" "Agia Marina" "Agia Eulampia" "Agia Kharalambia" "Agios Kharalambos" "Agios Kharilaos"
+	"Agios Antonios" "Agia Antonia" "Agios Ambrosios" "Panagia Aggelobastakhte" "Panagia Philoptokhi" "Panagia Thalassophiliti" Thalassomakhos Amphitrite "Thalassios Ippos"
+	"Thalassios Leontas" Persoktonos "Autokrator Isauros" "Autokrato Makedon" Thekla "Agia Thekla" Papaphlessas "Alexandros Hypsilantis" "Nea Ionia"
+	Boukephalas "Aphros tou Kymmatos" "Aphros tis Thalassas" Trieiris Iris Daphne Thermopyles Marathon Platees Theba "Epta Epi Thebas" Derbenakia
+	"Elephthero Pouli" Peristera "Oraia Peristera" Periphanos Periphane Periphania Akritikon "Elephtheros Poliorkimenos" Elephtheros Elephtheria "Elephtheria H Thanatos"
+	"Basileios Digenis Akritas" Prosphygopoulla Giophyri "Giophyrin tis Artas" Gephyra Serres Trikoupis Athanatos Athanati Styga "Agios Athanasios" "Agia Athanasia"
+	Athanasia Agerokhos Agerokhe Atrotos Atrote Pakhyammos Maa "Agia Paraskebi" "Agios Paraskebas" Larnaka Amathounta Lemesos Kolossi Kolossos Lara Onisilos
+	Makarios "Agios Grigorios" Petra Kypsele Melissa Sphikas Kiphinas Melitene Kentri "Maura Ori" Karagkiozis Nionios Naphpaktos Rodon Emporopoulla Emporas Khontros
+	Khontri "Iera Odos" "Egnatia Odos" Egnatia Ignatios Thalis Ephkleidis Milos Omiros Iliada Odysseia Phaiakas Phylakas Khalkida Psalida Zodia Morphou Aeriko Stephana
+	Oneiro Onar Ilarion "Agios Ilarion" Ephtykhia "Agios Ephtykhios" Khara Mystras "3 Kharites" Nymphe Nymphes Ariadne Stratiotis Palikaras "Markos Mpotsaris"
+	"Lampros Katsonis" Karabida Kaboure "Mana Kabourina" Mana "Mana Kouragio" Kouragio Boreios Notios "To Blemma tis Theodoras" Rizokarpaso Lysis Enosis
+	"Philippos o Makedon" Europe Hypatia Aristarkhos Aristos Ellada Ellinopoulla Romiopoulla Omorphe Omorphoulla Gynaika "Pyr Gyni kai Thalassa" Athlos Mpessa
+	Apostolos "Pani tou Osiou" "Osio Pani" Kapetanios Kapetaneos Sphyra Khelona Porphyrogennitos Porphyrogenis Porphyros Maurogenis Sabatogennimenos Kyriaki
+	"Re Alexis" Prigkipessa Prigkips Boskos Poimenas Thanatos Ethnikos Olympia Olympiakos Athlitis Axios Antaxios Antartis Kallinikos Prespa Sophia "Agia Sophia"
+	Blakheia Blakhopoulla Blakherna Kaphpha Moldabia Bulgaria Serbia Maurobounion Ragusa Dyrrakhion Kastoria Kastoras "Xylino Toikhos" Xoanon Zone Zallogos
+	"O Khoros tou Zallogou" Akhaea Aigina Abydos Akanthos Agrinion Alexandretta Patra Antipatra Amisos Amarinthos Antigona Antigone Amphipolis Antiokheia Anir
+	Andros Apollonia Argos Elia Elaion Argyroupole Tigris Tyros Phoinike Asklepios Pontos Pontios Baris Berga Byblos Byzantion Bosporos Khersonesos Khalkis Kroton
+	Kyrinea Dekeleia Delos Delphoi Mantis Tiresias "Mantis Tiresias" Dodona Doryaion Doryn Sarissa Dorystolon Stolos Elephsis Ephesos Epidabros Eretria Ephuoia Gaza
+	Gonios Goneas "Agios Onouphrios" "Agia Triada" Alikarnassos Helioupolis Ellinikon Ierapolis Ierapetra Khimera Iasos Ialysos Kallipolis Kamares Kameiros
+	Kipos Kipoi Kimmerikon Knidos Kios Kionas Knossos Kos Kourion Laodikeia Lapithos Lation Lephkada Lissos Lindos Magnesia Marathonas Massalia Megara Methone Militos
+	Mylasa Naphkratis Neapolis Nikea Nikopolis Nympheon Nysa Odessos Olbia Orkhomenos Erkhomenos Palaikastro Pandosia Phestos Pirreas Pella Phanagoria Pamphlagonia Pharnakia
+	Faros Phillipoi Phillipopolis Platanos Phokida Phokea Elis Kampania Kampana Poseidonia Psykhros Pseira Pylos Pylion Amphoreas Krassoamphora Region Sinope Sozopolis
+	Pisidia Thassos Thespia Tragurion Trapeza "Agia Trapeza" Tripolis Troia Tylissos Tyra Basillike Zakros Bathypetra Megalopetra
+}
+
+army_names = {
+	"Thema Thrakes" "Thema Makedonias" "Thema Thessalonikes" "Thema Hellados" "Thema Opsikion" "Thema Optimaton" 
+	"Thema Paphlagonias" "Thema Boukellarion" "Thema Anatolikon" "Thema Thrakesion" "Thema Strymonos"
+	"Thema Sebasteias" "Thema Armeniakon" "Thema Kharsianou" "Thema Dyrrhakhiou" "Thema Dalmatias"
+	"Thema Nikopoleos" "Thema Peleponnesou" "Thema Khersonos" "Thema Khaldias" "Thema Koloneias"
+	"Thema Lykandou" "Thema Seleukeias" "Thema Derzenes" "Thema Boulgarias" "Thema Paradounabon"
+	"Thema Sirmiou" "Thema Tephrikes" "Thema Edesses" "Thema Baasprakanias" "Thema $PROVINCE$s"
+}
+
+fleet_names = {
+	"Thema Kibyrrhaioton" "Thema Kypriakon" "Thema Aigaiou Pelagous" "Thema Sikelias" "Thema Samou" "Thema Kretes"
+	"Thema Kephallenias"
+}

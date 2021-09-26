@@ -1,0 +1,139 @@
+# Romania Africana
+graphical_culture = westerngfx
+
+color = { 121 4 159 }
+revolutionary_colors = { 4 8 4 }
+
+historical_idea_groups = {
+	offensive_ideas
+	defensive_ideas
+	trade_ideas
+	administrative_ideas
+	spy_ideas
+	economic_ideas
+	innovativeness_ideas
+	diplomatic_ideas
+}
+
+army_names = {
+	"Legio I" "Legio II" "Legio III" "Legio IV" "Legio V"
+	"Legio VI" "Legio VII" "Legio VIII" "Legio IX" "Legio X" 
+	"Legio XI" "Legio XII" "Legio XIII" "Legio XIV" "Legio XV"
+	"Legio XVI" "Legio XVII" "Legio XVIII" "Legio XIX" "Legio XX"
+}
+
+fleet_names = {
+	"Classis I" "Classis II" "Classis III" "Classis IV" "Classis V"
+	"Classis VI" "Classis VII" "Classis VIII" "Classis IX" "Classis X"
+	"Classis XI" "Classis XII" "Classis XIII" "Classis XIV" "Classis XV"
+}
+
+leader_names = {
+	Aphrodisiensis Asisiensis Andecavensis Bezerensis Brixiensis Byzaciensis Carthaginensis Capetiensis Clypiensis Columnensis Hadrumetensis Hipponensis Hortensis Ianuensis Inregillensis Iubaltianensis Laviniensis Neptensis Regillensis Parmensis Pomariensis Pupputensis Ruspinensis Sabrathensis Sacerensis Sullecthensis Tabalatensis Thabracensis Theleptensis Tipasensis Uticensis Valensis Versaliensis
+	Ahala Axilla Caecina Catilina Columna Glaucia Nerva Vatia
+	"de Aureliano" "de Patras" "de Castella" "de Lusiniano" "de Burbonia" "de Eporedia" "de Ascania" "de Burdigala" "de Vaga" "de Venetia" "de Sufete" "de Ursinis" "de Vada" "de Vivariis" "de Zitha"
+	#
+	Albanus Maximus
+}
+monarch_names = {
+
+	#Known and postulated Exarchs of Africa(AD 591 - 709)
+	"Gennadius #2" = 0
+	"Heraclius #1" = 0
+	"Nicetas #1" = 0
+	"Gregorius #1" = 0
+	"Eleutherius #1" = 0
+	"Ioannes #1" = 0
+	"Iulianus #2" = 20
+	
+    #Fictional(AD 709 - 1444):
+	"Constantinus #3" = 15
+	"Alexander #1" = 10
+	"Nicephorus #3" = 0
+	"Antipater #2" = 0
+	"Michael #3" = 0
+	"Basilius #2" = 0
+	"Stauracius #1" = 0
+	"Constans #1" = 15
+	"Constantius #3" = 15
+	"Severus #3" = 15
+	"Theodosius #1" = 5
+	"Philippus #2" = 5
+	"Vigens #1" = 0
+	"Valentinianus #3" = 15
+	"Valens #1" = 15
+	"Avitus #1" = 15
+	"Maiorianus #1" = 15
+	"Nepos #1" = 15
+	"Clemens #2" = 0
+	"Tacitus #1" = 15
+	"Zenodorus #1" = 0
+	"Aurelianus #1" = 15
+	"Probus #1" = 15
+	"Tetricus #2" = 5
+	"Latinius #1" = 0
+	"Hannibalianus #1" = 0
+	
+	"Aphrodisius #0" = 5
+	"Belisarius #0" = 10
+	"Blaesius #0" = 5
+	"Cassius #0" = 10
+	"Claudius #0" = 10
+	"Cicero #0" = 10
+	"Iovianus #0" = 10
+	"Achillius #0" = 10
+	"Pacatius #0" = 10
+	"Felix #0" = 10
+	"Victorius #0" = 10
+	"Thabracianus #0" = 5
+	"Lucianus #0" = 5
+	"Martinus #0" = 5
+	"Ruspinus #0" = 5
+	"Fabricianus #0" = 5
+	"Iustus #0" = 5
+	"Ianuarius #0" = 5
+	"Cyrus #0" = 5
+	"Cyrillus #0" = 5
+	"Sirius #0" = 5
+	"Silus #0" = 5
+	"Saturnius #0" = 5
+	"Apollonius #0" = 5
+	"Vulcanalius #0" = 5
+	"Iunonius #0" = 5
+	
+	"Aeliana #0" = -5
+	"Aetia #0" = -5
+	"Anastasia #0" = -5
+	"Antonina #0" = -5
+	"Apollonia #0" = -5
+	"Bellona #0" = -5
+	"Barbara #0" = -5
+	"Caecilia #0" = -5
+	"Caesaria #0" = -5
+	"Claudia #0" = -5
+	"Diana #0" = -5
+	"Marcia #0" = -5
+	"Minervina #0" = -5
+}
+ship_names = {
+	Abundantia "Acca Larentia" Acis Aerecura Aequitas Aesculapius Aeternitas Aeon "Aius Locutius"
+	Alernus Angerona Angitia "Anna Perenna" Annona Antevorta Apollo Arimanius Aura Aurora Averruncus
+	Bacchus Bellona "Bona Dea" "Bonus Eventus" Bubona Caca Cacus Camenae Cardea Carmenta Carmentes
+	Carna Ceres Clementia Cloacina Concordia Consus Cupid Cura Cybele "Dea Dia" "Dea Tacita"
+	Decima Devera Diana "Diana Nemorensis" "Dius Fidius" Disciplina "Dis Pater" Egeria Empanda
+	Epona Falacer Fama Fascinus Fauna Faunus Faustitas Februus Febris Fecunditas Felicitas Ferentina
+	Feronia Fides Flora Fornax Fontus Fortuna Fulgora Furrina Genius Gratiae Hercules Hermaphroditus
+	Hilaritas Honos Hora Indiges Intercidona Inuus Invidia Isis Iris Ianus Iuno Iupiter Iustitia
+	Iuturna Iuventas Lares Laverna Levana Letum Liber Libera Liberalitas Libertas Libitina Lua
+	Lucina Luna Lupercus Lympha "Mana Genita" Manes Mania Mantus Mars "Mater Matuta" Meditrina 
+	Mephitis Mellonia Mercurius Minerva Mithras Molae Moneta Mors Morta Murcia "Mutunus Tutunus"
+	Naenia Nascio Necessitas Nemesis Neptune Nerio Neverita Nixi Nona Nox Opis Orcus Palatua
+	Pales Parcae Pax Penates Picumnus Picus Pietas Pilumnus Pluto Poena Pomona Porrima Portunes
+	Postverta Priapus Proserpina Providentia Pudicitia Querquetulanae Quirinus Quiritis Robigus
+	Roma Rumina Salacia Salus Sancus Saturnus Securitas Silvanus "Sol Invictus" Somnus Soranus
+	Sors Spes Stata Mater Sterquilinus Suadela Summanus "Sulis Minerva" Tellurus Tempestas
+	"Terra Mater" Terminus Tiberinus Tibertus Tranquillitas Trivia Ubertas Unxia Uranus Vacuna
+	Vediovus Venilia Venti Venus Veritas Verminus Vertumnus Vesta "Vica Pota" Victoria Virbius
+	Virtus Volturnus Voluptas Vulcanus
+}
+
